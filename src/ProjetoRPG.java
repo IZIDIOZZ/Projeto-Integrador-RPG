@@ -7,36 +7,36 @@ public class ProjetoRPG {
 		System.out.println("- MENU PRINCIPAL -");
 		System.out.println("===================");
 		System.out.println("sonho_de_dev.java");
-		System.out.println("=======OPÇÕES=======");
+		System.out.println("=======OPÃ‡Ã•ES=======");
 		System.out.println("1: NOVO JOGO");
 		System.out.println("2: REGRAS");
-		System.out.println("3: CRÉDITOS");
+		System.out.println("3: CRÃ‰DITOS");
 		System.out.println("4: SAIR");
 		System.out.println("===================");
-		System.out.println("Digite o número da opção: ");
+		System.out.println("Digite o nÃºmero da opÃ§Ã£o: ");
 		int opcao;
 		opcao = ler.nextInt();
 		
 		switch (opcao){
 			case 1:
-				System.out.println("Opção NOVO JOGO selecionada!");
+				System.out.println("Opï¿½ï¿½o NOVO JOGO selecionada!");
 				System.out.println("Tenha um bom jogo :)");
 				break;
 				
 			case 2:
-				System.out.println("Opção REGRAS selecionada!");
+				System.out.println("Opï¿½ï¿½o REGRAS selecionada!");
 				System.out.println("=======REGRAS=======");
-				System.out.println("1 - Você deverá acertar a resposta das perguntas para causar dano no inimigo.");
-				System.out.println("2 - Caso você erre a resposta, sofrerá dano.");
-				System.out.println("3 - Você deverá fazer a barra de vida do inimigo chegar a zero para ganhar a batalha.");
-				System.out.println("4 - Se sua barra de vida chegar a zero primeiro, você perderá a batalha.");
-				System.out.println("5 - Faça boas escolhas, pois elas determinam seu progresso no jogo.");
+				System.out.println("1 - Vocï¿½ deverï¿½ acertar a resposta das perguntas para causar dano no inimigo.");
+				System.out.println("2 - Caso vocï¿½ erre a resposta, sofrerï¿½ dano.");
+				System.out.println("3 - Vocï¿½ deverï¿½ fazer a barra de vida do inimigo chegar a zero para ganhar a batalha.");
+				System.out.println("4 - Se sua barra de vida chegar a zero primeiro, vocï¿½ perderï¿½ a batalha.");
+				System.out.println("5 - Faï¿½a boas escolhas, pois elas determinam seu progresso no jogo.");
 				System.out.println("6 - Divirta-se! :)");
 				break;
 				
 			case 3:
-				System.out.println("Opção CRÉDITOS selecionada!");
-				System.out.println("=======CRÉDITOS=======");
+				System.out.println("Opï¿½ï¿½o CRï¿½DITOS selecionada!");
+				System.out.println("=======CRï¿½DITOS=======");
 				System.out.println("Este jogo foi desenvolvido pelo grupo 4 do Projeto Integrador");
 				System.out.println("=====INTEGRANTES=====");
 				System.out.println("Benjamin Nicolini");
@@ -49,8 +49,8 @@ public class ProjetoRPG {
 				break;
 			
 			case 4:
-				System.out.println("Opção SAIR selecionada!");
-				System.out.println("O jogo será encerrado.");
+				System.out.println("Opï¿½ï¿½o SAIR selecionada!");
+				System.out.println("O jogo serï¿½ encerrado.");
 				System.exit(0);
 				break;
 		}
