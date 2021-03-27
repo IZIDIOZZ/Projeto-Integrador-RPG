@@ -19,24 +19,24 @@ public class ProjetoRPG {
 		
 		switch (opcao){
 			case 1:
-				System.out.println("Op��o NOVO JOGO selecionada!");
+				System.out.println("Opção NOVO JOGO selecionada!");
 				System.out.println("Tenha um bom jogo :)");
 				break;
 				
 			case 2:
-				System.out.println("Op��o REGRAS selecionada!");
+				System.out.println("Opção REGRAS selecionada!");
 				System.out.println("=======REGRAS=======");
-				System.out.println("1 - Voc� dever� acertar a resposta das perguntas para causar dano no inimigo.");
-				System.out.println("2 - Caso voc� erre a resposta, sofrer� dano.");
-				System.out.println("3 - Voc� dever� fazer a barra de vida do inimigo chegar a zero para ganhar a batalha.");
-				System.out.println("4 - Se sua barra de vida chegar a zero primeiro, voc� perder� a batalha.");
-				System.out.println("5 - Fa�a boas escolhas, pois elas determinam seu progresso no jogo.");
+				System.out.println("1 - Você deverá acertar a resposta das perguntas para causar dano no inimigo.");
+				System.out.println("2 - Caso você erre a resposta, sofrerá dano.");
+				System.out.println("3 - Você deverá fazer a barra de vida do inimigo chegar a zero para ganhar a batalha.");
+				System.out.println("4 - Se sua barra de vida chegar a zero primeiro, você perderá a batalha.");
+				System.out.println("5 - Faça boas escolhas, pois elas determinam seu progresso no jogo.");
 				System.out.println("6 - Divirta-se! :)");
 				break;
 				
 			case 3:
-				System.out.println("Op��o CR�DITOS selecionada!");
-				System.out.println("=======CR�DITOS=======");
+				System.out.println("Opção CRÉDITOS selecionada!");
+				System.out.println("=======CRÉDITOS=======");
 				System.out.println("Este jogo foi desenvolvido pelo grupo 4 do Projeto Integrador");
 				System.out.println("=====INTEGRANTES=====");
 				System.out.println("Benjamin Nicolini");
@@ -49,10 +49,11 @@ public class ProjetoRPG {
 				break;
 			
 			case 4:
-				System.out.println("Op��o SAIR selecionada!");
-				System.out.println("O jogo ser� encerrado.");
+				System.out.println("Opção SAIR selecionada!");
+				System.out.println("O jogo será encerrado.");
 				System.exit(0);
 				break;
 		}
+		ler.close();
 	}
 }
