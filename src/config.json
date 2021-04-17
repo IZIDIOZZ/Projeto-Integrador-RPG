@@ -1,0 +1,46 @@
+{
+   "perguntas": [
+       {
+        "enunciado":"teste",
+        "respostas":[
+            {
+                "textoResposta":"",
+                "respostaCorreta": true,
+                "alternativa": "A"
+            },
+            {
+                "textoResposta":"",
+                "respostaCorreta": false,
+                "alternativa": "B"
+            },
+            {
+                "textoResposta":"",
+                "respostaCorreta": false,
+                "alternativa": "C"
+            },
+            {
+                "textoResposta":"",
+                "respostaCorreta": false,
+                "alternativa": "D"
+            }
+        ],
+        "dificuldadePergunta":"Facil"
+       }
+   ],
+   "inimigos":[
+       {
+         "vida" : 100,
+         "nome": "Garticoz",
+         "poderAtaque": 20,
+         "falas":[
+             {
+               "texto":"hahaha você vai morreu",
+               "contexto":"vitoria"  
+             }
+         ],
+         "nivel":"dificil"
+       }
+   ],
+   "capitulos":[],
+   "dificuldadeJogo":"dificil"
+}
