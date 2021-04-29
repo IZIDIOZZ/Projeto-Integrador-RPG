@@ -4,35 +4,21 @@ import java.util.List;
 
 public class Configuracao {
 	private List<Pergunta> perguntas;
-	
-	private String inimigos;
-	private String capitulos;
+	private List<Capitulo> capitulos;
+	private List<Personagem> inimigos;
 	private String dificuldadeJogo;
 	
-	public String getInimigos() {
-		return inimigos;
-	}
-	public void setInimigos(String inimigos) {
-		this.inimigos = inimigos;
-	}
-	public String getCapitulos() {
-		return capitulos;
-	}
-	public void setCapitulos(String capitulos) {
-		this.capitulos = capitulos;
-	}
-	public String getDificuldadeJogo() {
-		return dificuldadeJogo;
-	}
-	public void setDificuldadeJogo(String dificuldadeJogo) {
-		this.dificuldadeJogo = dificuldadeJogo;
-	}
+	public List<Personagem> getInimigos() { return inimigos; }
+	public void setInimigos(List<Personagem> inimigos) { this.inimigos = inimigos; }
 	
-	public List<Pergunta> pegaPerguntas() {
-		return perguntas;
-	}
-	public void setPerguntas(List<Pergunta> perguntas) {
-		this.perguntas = perguntas;
-	} 
+	public List<Capitulo> getCapitulos() { return capitulos; }
+	public void setCapitulos(List<Capitulo> capitulos) { this.capitulos = capitulos; }
+	
+	public List<Pergunta> getPerguntas() { return perguntas; }
+	public void setPerguntas(List<Pergunta> perguntas) { this.perguntas = perguntas; } 
+	
+	public String getDificuldadeJogo() { return dificuldadeJogo; }
+	public void setDificuldadeJogo(String dificuldadeJogo) { this.dificuldadeJogo = dificuldadeJogo; }
+	
 }
 

@@ -6,7 +6,7 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/T-Gamer/Downloads/jar_files/gson-2.8.6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/T-Gamer/Downloads/json-simple-1.1.jar/json-simple-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/danie/Documents/Projetos-Java/Projeto-Integrador-RPG/lib/gson-2.8.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/danie/Documents/Projetos-Java/Projeto-Integrador-RPG/lib/json-simple-1.1.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

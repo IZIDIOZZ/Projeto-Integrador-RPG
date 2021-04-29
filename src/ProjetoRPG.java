@@ -1,9 +1,24 @@
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+
+import com.google.gson.Gson;
+import Models.Capitulo;
+import Models.Configuracao;
+import Models.Pergunta;
+import Models.Personagem;
+import Models.Resposta;
+
 
 public class ProjetoRPG {
-
-	public static void main(String[] args) {
-		Scanner ler = new Scanner(System.in);
+	public static void main(String[] args) throws InterruptedException, IOException {
 		System.out.println("- MENU PRINCIPAL -");
 		System.out.println("===================");
 		System.out.println("sonho_de_dev.java");
@@ -14,14 +29,13 @@ public class ProjetoRPG {
 		System.out.println("4: SAIR");
 		System.out.println("===================");
 		System.out.println("Digite o número da opção: ");
-		int opcao;
-		LeTextoCompassado("OI");
-		opcao = ler.nextInt();
 		
-		switch (opcao){
+		switch (new Scanner(System.in).nextInt()){
 			case 1:
 				System.out.println("Opção NOVO JOGO selecionada!");
 				System.out.println("Tenha um bom jogo :)");
+//				IniciaJogo();
+				AlteraJson();
 				break;
 				
 			case 2:
@@ -55,10 +69,163 @@ public class ProjetoRPG {
 				System.exit(0);
 				break;
 		}
-		ler.close();
+				
 	}
-	public static void LeTextoCompassado(String texto) {
+	
+	public static void AlteraJson() throws IOException {
+		//Chama o método que lê o arquivo json e passa pra uma String
+		String json = LerArquivoJson("./src/config.json","UTF-8");
+		Configuracao config = new Configuracao();
+		//Converte a String em um objeto Json com base na Classe Configuracao
+		config = new Gson().fromJson(json, Configuracao.class);
+		config.setDificuldadeJogo("facil");
+		String novoTexto =  new Gson().toJson(config, Configuracao.class);
+		System.out.println(novoTexto);
+		
+		
+		FileOutputStream outputStream = new FileOutputStream("./src/config.json");
+	    byte[] strToBytes = novoTexto.getBytes();
+	    outputStream.write(strToBytes);
+	  
+	}
+	//método responsável pelo início do jogo
+	public static void IniciaJogo() throws IOException {
+		//Cria um objeto do tipo Configuracao que será usado para gerenciar todo o jogo
+		Configuracao base = new Configuracao();
+		
+		//Chama o método que preenche o objeto com os dados do json
+		base = ConfiguraJogo();
+		System.out.println("Caro jogador, insira seu Nome");
+		
+		//Cria um novo personagem para o jogador
+		Personagem jogador = new Personagem(new Scanner(System.in).next(), 100, 25);	
+		
+		/*Pega as perguntas que tiverem o mesmo nível de 
+		dificuldade da propriedade de dificuldade do Json*/
+		List<Pergunta> perguntas =  PegaPerguntasConfiguracao(base);
+		
+		List<Personagem> inimigos = PegaInimigosConfiguracao(base);
+	
+		for(Capitulo cap: base.getCapitulos()) {
+			
+			jogador = Batalhar(inimigos.get(0),jogador,perguntas);
+			
+			if(jogador.getVida() <= 0) 
+		    {
+				System.out.println("Você perdeu!");
+				break;
+			}else {
+				System.out.println("Você ganhou esse turno parabéns");
+			}
+		}
+	}
+	
+	public static Personagem Batalhar(Personagem inimigo,Personagem jogador, List<Pergunta>perguntas) {		
+			int i = perguntas.size();
+		for(Pergunta perg: perguntas) {
+				if(inimigo.getVida() <=0 || jogador.getVida() <=0 || i == 0) break;
+				Resposta respostaCorreta = new Resposta();
+				System.out.println(perg.getEnunciado());
+				
+				for(Resposta resp : perg.getRespostas()){
+					System.out.println(resp.getAlternativa()+") "+resp.getTextoResposta());
+					if(resp.isRespostaCorreta()) {
+						respostaCorreta = resp;
+					}				
+				}
+				if(RespostaCorreta(new Scanner(System.in).next(),respostaCorreta)){
+					inimigo.SofrerDano(jogador);
+				}else {
+					jogador.SofrerDano(inimigo);
+				}
+				System.out.println("vida do jogador - "+jogador.getVida());
+				System.out.println("vida do inimigo - "+inimigo.getVida());
+				i--;
+			}
+			return jogador;
+	}
+	//método que verifica se a resposta está correta
+	public static boolean RespostaCorreta(String alternativaCorreta, Resposta resposta){ 
+		boolean ehCorreta = false;
+		if((Character.toUpperCase(alternativaCorreta.charAt(0)) == Character.toUpperCase(resposta.getAlternativa()) 
+	        || (alternativaCorreta.toUpperCase().equals(resposta.getTextoResposta().toUpperCase())))) {
+			ehCorreta = true;
+		}
+		return ehCorreta;
+	}
+	
+	public static List<Personagem> PegaInimigosConfiguracao(Configuracao base){
 
-		System.out.println(texto.chars().count()); 
+		//o código resumido em uma linha 
+		List<Personagem> inimigos = new ArrayList<Personagem>();
+		
+		//Percorre o as perguntas para verificar a propriedade de dificuldade delas
+		for(Personagem inim: base.getInimigos()) {
+			
+			//verifica se a dificuldade da pergutna é igual a dificuldade geral do arquivo Json
+			if(inim.getNivel().equals(base.getDificuldadeJogo())) {
+				inimigos.add(inim);
+			}
+		}
+		return inimigos;
+	}
+	
+	/*Este método verifica a dificuldade do jogo definida no Json e 
+	pega somente as perguntas que estejam com este nivel de dificuldade*/
+	public static List<Pergunta> PegaPerguntasConfiguracao(Configuracao base) {
+
+		//o código resumido em uma linha 
+		List<Pergunta> perguntasRetorno = new ArrayList<Pergunta>();
+		
+		//Percorre o as perguntas para verificar a propriedade de dificuldade delas
+		for(Pergunta perg: base.getPerguntas()) {
+			
+			//verifica se a dificuldade da pergutna é igual a dificuldade geral do arquivo Json
+			if(perg.getDificuldadePergunta().equals(base.getDificuldadeJogo())) {
+				perguntasRetorno.add(perg);
+			}
+		}
+		return perguntasRetorno;
+	}
+	
+	/*método responsável por fazer a configuração geral do RPG, ele retorna um 
+	Objeto do tipo Configuracao com todas as propriedades de configuração que estão no Json*/
+	public static Configuracao ConfiguraJogo() throws IOException {
+		
+		//Chama o método que lê o arquivo json e passa pra uma String
+		String json = LerArquivoJson("./src/config.json","UTF-8");
+		
+		//Converte a String em um objeto Json com base na Classe Configuracao
+		Configuracao config = new Gson().fromJson(json, Configuracao.class);
+		
+		//retorna o objeto
+		return config;
+	}
+	
+	//Este método faz a leitura do arquivo Json através de um caminho e do tipo de codificação do arquivo
+	public static String LerArquivoJson(String caminho, String codificacao) throws IOException {
+		
+		//passa todas as linhas lidas para uma lista de Strings 
+		List<String> linhas = Files.readAllLines(Paths.get(caminho),Charset.forName(codificacao));
+		
+		//variável para receber o retorno que será o aqruivo completo lido
+		String retorno = new String();
+		
+		//iteramos a lista e passamos cada linha para a variável retorno
+		for(String e : linhas) { retorno += e + "\n";}
+		return retorno;
+	}
+	
+	//código que limpa a tela do console
+	public static void  LimparTela(){
+		try {
+			
+			/*chama a classe ProcessBuilder que é responsável por executar comandos
+			  através de uma aplicação, neste caso estamos usando o cmd*/
+		  new ProcessBuilder("cmd.exe","/c","cls").inheritIO().start().waitFor();
+		
+		} catch (Exception e) {
+			System.out.println("Não foi possível limpar a tela");
+		}
 	}
 }

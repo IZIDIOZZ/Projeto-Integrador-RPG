@@ -2,9 +2,13 @@ package Models;
 import java.util.List;
 
 public class Pergunta {
+	private int id;
 	private String enunciado;
 	private List<Resposta> respostas; 
 	private String dificuldadePergunta;
+	
+	public int getId() { return id;}
+	public void setId(int id) { this.id = id;}
 	
 	public String getDificuldadePergunta() {
 		return dificuldadePergunta;
