@@ -1,23 +1,44 @@
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Hashtable;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import Models.Capitulo;
 import Models.Configuracao;
 import Models.Pergunta;
 import Models.Personagem;
 import Models.Resposta;
 
-
+enum Dificuldades{
+	FACIL("facil"),
+	MEDIO("medio"),
+	DIFICIL("dificil");
+	
+	private String escolhaDificuldade;
+	public String getEscolhaDificuldade() {
+		return escolhaDificuldade;
+	}
+	private Dificuldades(String escolhaDificuldade) {
+		this.escolhaDificuldade = escolhaDificuldade;
+	}
+}
 public class ProjetoRPG {
+	
+	
 	public static void main(String[] args) throws InterruptedException, IOException {
 		System.out.println("- MENU PRINCIPAL -");
 		System.out.println("===================");
@@ -26,7 +47,8 @@ public class ProjetoRPG {
 		System.out.println("1: NOVO JOGO");
 		System.out.println("2: REGRAS");
 		System.out.println("3: CRÉDITOS");
-		System.out.println("4: SAIR");
+		System.out.println("4: DIFICULDADE");
+		System.out.println("5: SAIR");
 		System.out.println("===================");
 		System.out.println("Digite o número da opção: ");
 		
@@ -34,8 +56,8 @@ public class ProjetoRPG {
 			case 1:
 				System.out.println("Opção NOVO JOGO selecionada!");
 				System.out.println("Tenha um bom jogo :)");
-//				IniciaJogo();
-				AlteraJson();
+				IniciaJogo();
+				
 				break;
 				
 			case 2:
@@ -64,29 +86,54 @@ public class ProjetoRPG {
 				break;
 			
 			case 4:
+				
+				int escolha = 0;
+				do {
+					System.out.println("Opção DIFICULDADE selecionada!");
+					System.out.println("=======DIFICULDADE=======");
+					
+					for(Dificuldades dif: Dificuldades.values() ) {
+						System.out.println((dif.ordinal()+1)+" -"+dif.getEscolhaDificuldade());
+					}
+					
+					System.out.println("==========================");
+					System.out.println("Selecione a dificuldade do jogo: ");
+					escolha  = new Scanner(System.in).nextInt();
+				}while(!EscolhaDificuldadeSelecionadaExiste(escolha));
+				
+				String dificuldade = Dificuldades.values()[escolha-1].getEscolhaDificuldade();	
+				
+				ConfiguraDificuldade(dificuldade,ConfiguraJogo());
+				break;
+			case 5:
 				System.out.println("Opção SAIR selecionada!");
 				System.out.println("O jogo será encerrado.");
 				System.exit(0);
 				break;
-		}
 				
+		}		
 	}
-	
-	public static void AlteraJson() throws IOException {
+	public static boolean EscolhaDificuldadeSelecionadaExiste(int indexEscolhaDificuldade) {
+		boolean escolhaExiste = false;
+		for(Dificuldades dif: Dificuldades.values() ) {
+			if(indexEscolhaDificuldade == (dif.ordinal()+1)) {
+				escolhaExiste = true; 
+				break;
+			} 
+		}
+		return escolhaExiste;
+	}
+	public static void ConfiguraDificuldade(String dificuldadeJogo,Configuracao config) throws IOException {
+		
 		//Chama o método que lê o arquivo json e passa pra uma String
-		String json = LerArquivoJson("./src/config.json","UTF-8");
-		Configuracao config = new Configuracao();
-		//Converte a String em um objeto Json com base na Classe Configuracao
-		config = new Gson().fromJson(json, Configuracao.class);
-		config.setDificuldadeJogo("facil");
-		String novoTexto =  new Gson().toJson(config, Configuracao.class);
-		System.out.println(novoTexto);
+		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 		
-		
-		FileOutputStream outputStream = new FileOutputStream("./src/config.json");
-	    byte[] strToBytes = novoTexto.getBytes();
-	    outputStream.write(strToBytes);
-	  
+		config.setDificuldadeJogo(dificuldadeJogo);
+		String novoTexto = gson.toJson(config, Configuracao.class);
+
+		OutputStreamWriter out = new OutputStreamWriter(new FileOutputStream("./src/config.json"), StandardCharsets.UTF_8);
+		out.write(novoTexto);
+		out.close();
 	}
 	//método responsável pelo início do jogo
 	public static void IniciaJogo() throws IOException {

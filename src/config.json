@@ -1,474 +1,93 @@
 {
-   "perguntas": [
-       {
-        "id": 1,
-        "enunciado":"Quanto é 1+1?",
-        "respostas":[
-            {
-                
-                "textoResposta":"23",
-                "respostaCorreta": false,
-                "alternativa": "A"
-            },
-            {
-                "textoResposta":"14",
-                "respostaCorreta": false,
-                "alternativa": "B"
-            },
-            {
-                "textoResposta":"2",
-                "respostaCorreta": true,
-                "alternativa": "C"
-            },
-            {
-                "textoResposta":"42",
-                "respostaCorreta": false,
-                "alternativa": "D"
-            }
-        ],
-        "dificuldadePergunta":"dificil"
-       },
-       {
-        "id": 1,
-        "enunciado":"Quanto é 1+1?",
-        "respostas":[
-            {
-                
-                "textoResposta":"23",
-                "respostaCorreta": false,
-                "alternativa": "A"
-            },
-            {
-                "textoResposta":"14",
-                "respostaCorreta": false,
-                "alternativa": "B"
-            },
-            {
-                "textoResposta":"2",
-                "respostaCorreta": true,
-                "alternativa": "C"
-            },
-            {
-                "textoResposta":"42",
-                "respostaCorreta": false,
-                "alternativa": "D"
-            }
-        ],
-        "dificuldadePergunta":"dificil"
-       }, {
-        "id": 1,
-        "enunciado":"Quanto é 1+1?",
-        "respostas":[
-            {
-                
-                "textoResposta":"23",
-                "respostaCorreta": false,
-                "alternativa": "A"
-            },
-            {
-                "textoResposta":"14",
-                "respostaCorreta": false,
-                "alternativa": "B"
-            },
-            {
-                "textoResposta":"2",
-                "respostaCorreta": true,
-                "alternativa": "C"
-            },
-            {
-                "textoResposta":"42",
-                "respostaCorreta": false,
-                "alternativa": "D"
-            }
-        ],
-        "dificuldadePergunta":"dificil"
-       }, {
-        "id": 1,
-        "enunciado":"Quanto é 1+1?",
-        "respostas":[
-            {
-                
-                "textoResposta":"23",
-                "respostaCorreta": false,
-                "alternativa": "A"
-            },
-            {
-                "textoResposta":"14",
-                "respostaCorreta": false,
-                "alternativa": "B"
-            },
-            {
-                "textoResposta":"2",
-                "respostaCorreta": true,
-                "alternativa": "C"
-            },
-            {
-                "textoResposta":"42",
-                "respostaCorreta": false,
-                "alternativa": "D"
-            }
-        ],
-        "dificuldadePergunta":"dificil"
-       }, {
-        "id": 1,
-        "enunciado":"Quanto é 1+1?",
-        "respostas":[
-            {
-                
-                "textoResposta":"23",
-                "respostaCorreta": false,
-                "alternativa": "A"
-            },
-            {
-                "textoResposta":"14",
-                "respostaCorreta": false,
-                "alternativa": "B"
-            },
-            {
-                "textoResposta":"2",
-                "respostaCorreta": true,
-                "alternativa": "C"
-            },
-            {
-                "textoResposta":"42",
-                "respostaCorreta": false,
-                "alternativa": "D"
-            }
-        ],
-        "dificuldadePergunta":"dificil"
-       }, {
-        "id": 1,
-        "enunciado":"Quanto é 1+1?",
-        "respostas":[
-            {
-                
-                "textoResposta":"23",
-                "respostaCorreta": false,
-                "alternativa": "A"
-            },
-            {
-                "textoResposta":"14",
-                "respostaCorreta": false,
-                "alternativa": "B"
-            },
-            {
-                "textoResposta":"2",
-                "respostaCorreta": true,
-                "alternativa": "C"
-            },
-            {
-                "textoResposta":"42",
-                "respostaCorreta": false,
-                "alternativa": "D"
-            }
-        ],
-        "dificuldadePergunta":"dificil"
-       }, {
-        "id": 1,
-        "enunciado":"Quanto é 1+1?",
-        "respostas":[
-            {
-                
-                "textoResposta":"23",
-                "respostaCorreta": false,
-                "alternativa": "A"
-            },
-            {
-                "textoResposta":"14",
-                "respostaCorreta": false,
-                "alternativa": "B"
-            },
-            {
-                "textoResposta":"2",
-                "respostaCorreta": true,
-                "alternativa": "C"
-            },
-            {
-                "textoResposta":"42",
-                "respostaCorreta": false,
-                "alternativa": "D"
-            }
-        ],
-        "dificuldadePergunta":"dificil"
-       }, {
-        "id": 1,
-        "enunciado":"Quanto é 1+1?",
-        "respostas":[
-            {
-                
-                "textoResposta":"23",
-                "respostaCorreta": false,
-                "alternativa": "A"
-            },
-            {
-                "textoResposta":"14",
-                "respostaCorreta": false,
-                "alternativa": "B"
-            },
-            {
-                "textoResposta":"2",
-                "respostaCorreta": true,
-                "alternativa": "C"
-            },
-            {
-                "textoResposta":"42",
-                "respostaCorreta": false,
-                "alternativa": "D"
-            }
-        ],
-        "dificuldadePergunta":"dificil"
-       }, {
-        "id": 1,
-        "enunciado":"Quanto é 1+1?",
-        "respostas":[
-            {
-                
-                "textoResposta":"23",
-                "respostaCorreta": false,
-                "alternativa": "A"
-            },
-            {
-                "textoResposta":"14",
-                "respostaCorreta": false,
-                "alternativa": "B"
-            },
-            {
-                "textoResposta":"2",
-                "respostaCorreta": true,
-                "alternativa": "C"
-            },
-            {
-                "textoResposta":"42",
-                "respostaCorreta": false,
-                "alternativa": "D"
-            }
-        ],
-        "dificuldadePergunta":"dificil"
-       }, {
-        "id": 1,
-        "enunciado":"Quanto é 1+1?",
-        "respostas":[
-            {
-                
-                "textoResposta":"23",
-                "respostaCorreta": false,
-                "alternativa": "A"
-            },
-            {
-                "textoResposta":"14",
-                "respostaCorreta": false,
-                "alternativa": "B"
-            },
-            {
-                "textoResposta":"2",
-                "respostaCorreta": true,
-                "alternativa": "C"
-            },
-            {
-                "textoResposta":"42",
-                "respostaCorreta": false,
-                "alternativa": "D"
-            }
-        ],
-        "dificuldadePergunta":"dificil"
-       }, {
-        "id": 1,
-        "enunciado":"Quanto é 1+1?",
-        "respostas":[
-            {
-                
-                "textoResposta":"23",
-                "respostaCorreta": false,
-                "alternativa": "A"
-            },
-            {
-                "textoResposta":"14",
-                "respostaCorreta": false,
-                "alternativa": "B"
-            },
-            {
-                "textoResposta":"2",
-                "respostaCorreta": true,
-                "alternativa": "C"
-            },
-            {
-                "textoResposta":"42",
-                "respostaCorreta": false,
-                "alternativa": "D"
-            }
-        ],
-        "dificuldadePergunta":"dificil"
-       }, {
-        "id": 1,
-        "enunciado":"Quanto é 1+1?",
-        "respostas":[
-            {
-                
-                "textoResposta":"23",
-                "respostaCorreta": false,
-                "alternativa": "A"
-            },
-            {
-                "textoResposta":"14",
-                "respostaCorreta": false,
-                "alternativa": "B"
-            },
-            {
-                "textoResposta":"2",
-                "respostaCorreta": true,
-                "alternativa": "C"
-            },
-            {
-                "textoResposta":"42",
-                "respostaCorreta": false,
-                "alternativa": "D"
-            }
-        ],
-        "dificuldadePergunta":"dificil"
-       }, {
-        "id": 1,
-        "enunciado":"Quanto é 1+1?",
-        "respostas":[
-            {
-                
-                "textoResposta":"23",
-                "respostaCorreta": false,
-                "alternativa": "A"
-            },
-            {
-                "textoResposta":"14",
-                "respostaCorreta": false,
-                "alternativa": "B"
-            },
-            {
-                "textoResposta":"2",
-                "respostaCorreta": true,
-                "alternativa": "C"
-            },
-            {
-                "textoResposta":"42",
-                "respostaCorreta": false,
-                "alternativa": "D"
-            }
-        ],
-        "dificuldadePergunta":"dificil"
-       }, {
-        "id": 1,
-        "enunciado":"Quanto é 1+1?",
-        "respostas":[
-            {
-                
-                "textoResposta":"23",
-                "respostaCorreta": false,
-                "alternativa": "A"
-            },
-            {
-                "textoResposta":"14",
-                "respostaCorreta": false,
-                "alternativa": "B"
-            },
-            {
-                "textoResposta":"2",
-                "respostaCorreta": true,
-                "alternativa": "C"
-            },
-            {
-                "textoResposta":"42",
-                "respostaCorreta": false,
-                "alternativa": "D"
-            }
-        ],
-        "dificuldadePergunta":"dificil"
-       }, {
-        "id": 1,
-        "enunciado":"Quanto é 1+1?",
-        "respostas":[
-            {
-                
-                "textoResposta":"23",
-                "respostaCorreta": false,
-                "alternativa": "A"
-            },
-            {
-                "textoResposta":"14",
-                "respostaCorreta": false,
-                "alternativa": "B"
-            },
-            {
-                "textoResposta":"2",
-                "respostaCorreta": true,
-                "alternativa": "C"
-            },
-            {
-                "textoResposta":"42",
-                "respostaCorreta": false,
-                "alternativa": "D"
-            }
-        ],
-        "dificuldadePergunta":"dificil"
-       }
-   ],
-   "inimigos":[
-       {
-         "id" : 0,
-         "vida" : 100,
-         "nome": "Garticoz",
-         "poderAtaque": 20,
-         "falas":[
-             {
-               "texto":"hahaha você vai morreu",
-               "contexto":"vitoria"  
-             }
-         ],
-         "nivel":"dificil"
-       },
-       {
-        "id" : 1,
-        "vida" : 100,
-        "nome": "Garticoz",
-        "poderAtaque": 20,
-        "falas":[
-            {
-              "texto":"hahaha você vai morreu",
-              "contexto":"vitoria"  
-            }
-        ],
-        "nivel":"dificil"
-      },
-      {
-        "id" : 2,
-        "vida" : 100,
-        "nome": "Garticoz",
-        "poderAtaque": 20,
-        "falas":[
-            {
-              "texto":"hahaha você vai morreu",
-              "contexto":"vitoria"  
-            }
-        ],
-        "nivel":"dificil"
-      },
-      {
-        "id" : 3,
-        "vida" : 100,
-        "nome": "Garticoz",
-        "poderAtaque": 20,
-        "falas":[
-            {
-              "texto":"hahaha você vai morreu",
-              "contexto":"vitoria"  
-            }
-        ],
-        "nivel":"dificil"
-      }
-
-   ],
-   "capitulos":[
+  "perguntas": [
+    {
+      "id": 1,
+      "enunciado": "Quanto é 1+1?",
+      "respostas": [
         {
-          "numero": 1,
-          "texto" : "Estava o Heroi andando perto",
-          "capituloFinal": false
+          "textoResposta": "23",
+          "respostaCorreta": false,
+          "alternativa": "A"
+        },
+        {
+          "textoResposta": "14",
+          "respostaCorreta": false,
+          "alternativa": "B"
+        },
+        {
+          "textoResposta": "2",
+          "respostaCorreta": true,
+          "alternativa": "C"
+        },
+        {
+          "textoResposta": "42",
+          "respostaCorreta": false,
+          "alternativa": "D"
         }
-   ],
-   "dificuldadeJogo":"dificil"  
+      ],
+      "dificuldadePergunta": "dificil"
+    }
+  ],
+  "capitulos": [
+    {
+      "numero": 1,
+      "texto": "Estava o Heroi andando perto",
+      "capituloFinal": false
+    }
+  ],
+  "inimigos": [
+    {
+      "id": 0,
+      "vida": 100,
+      "nome": "Garticoz",
+      "poderAtaque": 20,
+      "falas": [
+        {
+          "texto": "hahaha você vai morreu",
+          "contexto": "vitoria"
+        }
+      ],
+      "nivel": "dificil"
+    },
+    {
+      "id": 1,
+      "vida": 100,
+      "nome": "Garticoz",
+      "poderAtaque": 20,
+      "falas": [
+        {
+          "texto": "hahaha você vai morreu",
+          "contexto": "vitoria"
+        }
+      ],
+      "nivel": "dificil"
+    },
+    {
+      "id": 2,
+      "vida": 100,
+      "nome": "Garticoz",
+      "poderAtaque": 20,
+      "falas": [
+        {
+          "texto": "hahaha você vai morreu",
+          "contexto": "vitoria"
+        }
+      ],
+      "nivel": "dificil"
+    },
+    {
+      "id": 3,
+      "vida": 100,
+      "nome": "Garticoz",
+      "poderAtaque": 20,
+      "falas": [
+        {
+          "texto": "hahaha você vai morreu",
+          "contexto": "vitoria"
+        }
+      ],
+      "nivel": "dificil"
+    }
+  ],
+  "dificuldadeJogo": "dificil"
 }
