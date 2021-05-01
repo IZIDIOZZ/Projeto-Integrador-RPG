@@ -26,6 +26,87 @@
         }
       ],
       "dificuldadePergunta": "dificil"
+    },
+    {
+      "id": 1,
+      "enunciado": "Quanto é 2?",
+      "respostas": [
+        {
+          "textoResposta": "23",
+          "respostaCorreta": false,
+          "alternativa": "A"
+        },
+        {
+          "textoResposta": "14",
+          "respostaCorreta": false,
+          "alternativa": "B"
+        },
+        {
+          "textoResposta": "2",
+          "respostaCorreta": true,
+          "alternativa": "C"
+        },
+        {
+          "textoResposta": "42",
+          "respostaCorreta": false,
+          "alternativa": "D"
+        }
+      ],
+      "dificuldadePergunta": "dificil"
+    },
+    {
+      "id": 1,
+      "enunciado": "Quanto é 3?",
+      "respostas": [
+        {
+          "textoResposta": "23",
+          "respostaCorreta": false,
+          "alternativa": "A"
+        },
+        {
+          "textoResposta": "14",
+          "respostaCorreta": false,
+          "alternativa": "B"
+        },
+        {
+          "textoResposta": "2",
+          "respostaCorreta": true,
+          "alternativa": "C"
+        },
+        {
+          "textoResposta": "42",
+          "respostaCorreta": false,
+          "alternativa": "D"
+        }
+      ],
+      "dificuldadePergunta": "dificil"
+    },
+    {
+      "id": 1,
+      "enunciado": "Quanto é 4?",
+      "respostas": [
+        {
+          "textoResposta": "23",
+          "respostaCorreta": false,
+          "alternativa": "A"
+        },
+        {
+          "textoResposta": "14",
+          "respostaCorreta": false,
+          "alternativa": "B"
+        },
+        {
+          "textoResposta": "2",
+          "respostaCorreta": true,
+          "alternativa": "C"
+        },
+        {
+          "textoResposta": "42",
+          "respostaCorreta": false,
+          "alternativa": "D"
+        }
+      ],
+      "dificuldadePergunta": "dificil"
     }
   ],
   "capitulos": [
@@ -89,5 +170,9 @@
       "nivel": "dificil"
     }
   ],
-  "dificuldadeJogo": "dificil"
+  "configuracaoJogo": {
+    "dificuldadeJogo": "dificil",
+    "quantidadeMaximaPerguntas": 10,
+    "quantidadeMaximaInimigos": 0
+  }
 }
