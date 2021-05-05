@@ -241,6 +241,43 @@
         }
       ],
       "nivel": "dificil"
+    },
+    {
+      "id": 2,
+      "vida": 100,
+      "nome": "Garticoz",
+      "poderAtaque": 20,
+      "falas": [
+        {
+          "texto": "hahaha você vai morreu",
+          "contexto": "vitoria"
+        }
+      ],
+      "nivel": "dificil"
+    }, {
+      "id": 2,
+      "vida": 100,
+      "nome": "Garticoz",
+      "poderAtaque": 20,
+      "falas": [
+        {
+          "texto": "hahaha você vai morreu",
+          "contexto": "vitoria"
+        }
+      ],
+      "nivel": "dificil"
+    }, {
+      "id": 2,
+      "vida": 100,
+      "nome": "Garticoz",
+      "poderAtaque": 20,
+      "falas": [
+        {
+          "texto": "hahaha você vai morreu",
+          "contexto": "vitoria"
+        }
+      ],
+      "nivel": "dificil"
     }
   ],
   "configuracaoJogo": {

@@ -8,6 +8,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Random;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -104,5 +105,9 @@ public class ConfiguracaoJogo {
 			} 
 		}
 		return escolhaExiste;
+	}
+	
+	public static int GeraNumeroAleatorioPorIntervalo(int valorInicial, int valorFinal) {
+			return new Random().nextInt(valorFinal-valorInicial) + valorInicial;
 	}
 }

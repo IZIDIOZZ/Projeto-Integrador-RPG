@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Personagem {
 	private int id;
@@ -12,7 +13,12 @@ public class Personagem {
 	private int poderAtaque;
 	private List<Fala> falas;
 	private String nivel;
+	private boolean jaLutou = false;
 	
+	public boolean jaLutou() { return jaLutou; }
+
+	public void setJaLutou(boolean jaLutou) { this.jaLutou = jaLutou; }
+
 	public int getId() {return id;}
 	
 	public List<Fala> getFalas() {return falas;}
@@ -32,7 +38,7 @@ public class Personagem {
 	
 	public Personagem(String nome, int vida,  int poderAtaque ){
 		this.nome = nome;
-		this.vida=vida;
+		this.vida = vida;
 		this.poderAtaque = poderAtaque;
 	}
 	
@@ -40,20 +46,24 @@ public class Personagem {
 		this.vida -= inimigo.getPoderAtaque();
 	}
 	
-	public void Batalhar(List<Personagem> inimigo, List<Pergunta>perguntas,int turno) {		
-		int quantidadePerguntasFeitas = 0;
+	public void Batalhar(List<Personagem> inimigos, List<Pergunta>perguntas) {		
+		inimigos = RetornaInimigosQueNaoLutaram(inimigos);
+		perguntas = RetornaPerguntasQueNaoForamFeitas(perguntas);
 		
-		System.out.println(inimigo.get(turno));
-		System.out.println(perguntas.size());
+		if(perguntas.isEmpty() || inimigos.isEmpty()) return;
 		
-		for(Pergunta perg: perguntas) {
+		Personagem inimigo = inimigos.get(0);
+		System.out.println("perguntas - "+perguntas.size());
+		System.out.println("inimigos - "+inimigos.size());
+		
+		for(Pergunta pergunta: perguntas) {
 			
-				if(inimigo.get(turno).getVida() <=0 || this.getVida() <=0 || quantidadePerguntasFeitas >=  perguntas.size()) break;
+				if(inimigo.getVida() <=0 || this.getVida() <=0) break;
 				
 				Resposta respostaCorreta = new Resposta();
-				System.out.println(perg.getEnunciado());
+				System.out.println(pergunta.getEnunciado());
 				
-				for(Resposta resp : perg.getRespostas()){
+				for(Resposta resp : pergunta.getRespostas()){
 					System.out.println(resp.getAlternativa()+") "+resp.getTextoResposta());
 					if(resp.isRespostaCorreta()) {
 						respostaCorreta = resp;
@@ -61,19 +71,26 @@ public class Personagem {
 				}
 				
 				if(respostaCorreta.RespostaCorreta(new Scanner(System.in).next(),respostaCorreta)){
-					inimigo.get(turno).SofrerDano(this);
+					inimigo.SofrerDano(this);
 				}else {
-					this.SofrerDano(inimigo.get(turno));
+					this.SofrerDano(inimigo);
 				}
-				System.out.println("vida do jogador - "+this.getVida());
-				System.out.println("vida do inimigo - "+inimigo.get(turno).getVida());
 				
-				perguntas.remove(perguntas.get(quantidadePerguntasFeitas));
-				quantidadePerguntasFeitas++;
+				System.out.println("vida do jogador - "+this.getVida());
+				System.out.println("vida do inimigo - "+inimigo.getVida());
+				
+				pergunta.setJaFoiFeita(true);	
 		}
-		System.out.println(perguntas.size());
+		inimigo.setJaLutou(true);
 	}
 	
+	public List<Personagem> RetornaInimigosQueNaoLutaram(List<Personagem> inimigos) {
+		return inimigos.stream().filter(inimigo->inimigo.jaLutou == false).collect(Collectors.toList());
+	}
+	
+	public List<Pergunta> RetornaPerguntasQueNaoForamFeitas(List<Pergunta>perguntas) {	
+		return perguntas.stream().filter(pergunta->pergunta.jaFoiFeita() == false).collect(Collectors.toList());
+	}
 	public static List<Personagem> BuscaInimigosComBaseDificuldadeGeral(RPG base){
 
 		//o código resumido em uma linha 

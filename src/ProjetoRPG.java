@@ -28,7 +28,7 @@ public class ProjetoRPG {
 				try{
 					
 				   itemSelecionado = OpcaoMenuEnum.values()[new Scanner(System.in).nextInt()-1];
-				   System.out.println( itemSelecionado);
+//				   System.out.println( itemSelecionado);
 				   
 				}catch (Exception e) {
 					ConfiguracaoJogo.LimparTela();
@@ -38,9 +38,8 @@ public class ProjetoRPG {
 				    
 					case NOVO_JOGO:
 						System.out.println("Opção NOVO JOGO selecionada!");
-						System.out.println("Tenha um bom jogo :)");
-						
 						RPG.IniciaJogo();
+						System.exit(0);
 						break;
 						
 					case REGRAS:
@@ -92,8 +91,7 @@ public class ProjetoRPG {
 						break;
 						
 					case SAIR:
-						System.out.println("Opção SAIR selecionada!");
-						System.out.println("O jogo será encerrado.");
+						System.out.println("O jogo foi encerrado.");
 						System.exit(0);
 						break;
 						
@@ -104,7 +102,7 @@ public class ProjetoRPG {
 			}
 		} catch (Exception e) {
 			ConfiguracaoJogo.LimparTela();
-			System.out.println("Um erro inesperado ocorreu.");
+			System.out.println("Um erro inesperado ocorreu : " + e.getMessage());
 		}
 	}
 }

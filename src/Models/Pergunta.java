@@ -8,6 +8,10 @@ public class Pergunta {
 	private String enunciado;
 	private List<Resposta> respostas; 
 	private String dificuldadePergunta;
+	private boolean jaFoiFeita = false;
+	
+	public boolean jaFoiFeita() { return jaFoiFeita; }
+	public void setJaFoiFeita(boolean jaFoiFeita) { this.jaFoiFeita = jaFoiFeita; }
 	
 	public int getId() { return id;}
 	public void setId(int id) { this.id = id;}
