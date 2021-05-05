@@ -2,25 +2,79 @@
   "perguntas": [
     {
       "id": 1,
-      "enunciado": "Quanto é 1+1?",
+      "enunciado": "O que é uma variável?",
       "respostas": [
         {
-          "textoResposta": "23",
-          "respostaCorreta": false,
+          "textoResposta": "Estrutura que guarda valores na memória",
+          "respostaCorreta": true,
           "alternativa": "A"
         },
         {
-          "textoResposta": "14",
+          "textoResposta": "Varias aves",
           "respostaCorreta": false,
           "alternativa": "B"
         },
         {
-          "textoResposta": "2",
+          "textoResposta": "Estrutura indexada não dinâmica",
+          "respostaCorreta": false,
+          "alternativa": "C"
+        },
+        {
+          "textoResposta": "Um banco de dados",
+          "respostaCorreta": false,
+          "alternativa": "D"
+        }
+      ],
+      "dificuldadePergunta": "facil"
+    },
+    {
+      "id": 1,
+      "enunciado": "Qual dos algoritmos abaixo é de ordenação?",
+      "respostas": [
+        {
+          "textoResposta": "Binary Search",
+          "respostaCorreta": false,
+          "alternativa": "A"
+        },
+        {
+          "textoResposta": "Breadth First Search (BFS)",
+          "respostaCorreta": false,
+          "alternativa": "B"
+        },
+        {
+          "textoResposta": "Floyd Warshall",
+          "respostaCorreta": false,
+          "alternativa": "C"
+        },
+        {
+          "textoResposta": "Heap Sort",
+          "respostaCorreta": true,
+          "alternativa": "D"
+        }
+      ],
+      "dificuldadePergunta": "medio"
+    },
+    {
+      "id": 1,
+      "enunciado": "Qual o valor que será atribuido a i?\nint i \u003d Math.Pow(2,3)",
+      "respostas": [
+        {
+          "textoResposta": "6",
+          "respostaCorreta": false,
+          "alternativa": "A"
+        },
+        {
+          "textoResposta": "15",
+          "respostaCorreta": false,
+          "alternativa": "B"
+        },
+        {
+          "textoResposta": "8",
           "respostaCorreta": true,
           "alternativa": "C"
         },
         {
-          "textoResposta": "42",
+          "textoResposta": "22",
           "respostaCorreta": false,
           "alternativa": "D"
         }
@@ -29,25 +83,25 @@
     },
     {
       "id": 1,
-      "enunciado": "Quanto é 2?",
+      "enunciado": "Qual o valor que será atribuido a i?\nint i \u003d Math.Pow(2,3)",
       "respostas": [
         {
-          "textoResposta": "23",
+          "textoResposta": "6",
           "respostaCorreta": false,
           "alternativa": "A"
         },
         {
-          "textoResposta": "14",
+          "textoResposta": "15",
           "respostaCorreta": false,
           "alternativa": "B"
         },
         {
-          "textoResposta": "2",
+          "textoResposta": "8",
           "respostaCorreta": true,
           "alternativa": "C"
         },
         {
-          "textoResposta": "42",
+          "textoResposta": "22",
           "respostaCorreta": false,
           "alternativa": "D"
         }
@@ -56,25 +110,25 @@
     },
     {
       "id": 1,
-      "enunciado": "Quanto é 3?",
+      "enunciado": "Qual o valor que será atribuido a i?\nint i \u003d Math.Pow(2,3)",
       "respostas": [
         {
-          "textoResposta": "23",
+          "textoResposta": "6",
           "respostaCorreta": false,
           "alternativa": "A"
         },
         {
-          "textoResposta": "14",
+          "textoResposta": "15",
           "respostaCorreta": false,
           "alternativa": "B"
         },
         {
-          "textoResposta": "2",
+          "textoResposta": "8",
           "respostaCorreta": true,
           "alternativa": "C"
         },
         {
-          "textoResposta": "42",
+          "textoResposta": "22",
           "respostaCorreta": false,
           "alternativa": "D"
         }
@@ -83,25 +137,52 @@
     },
     {
       "id": 1,
-      "enunciado": "Quanto é 4?",
+      "enunciado": "Qual o valor que será atribuido a i?\nint i \u003d Math.Pow(2,3)",
       "respostas": [
         {
-          "textoResposta": "23",
+          "textoResposta": "6",
           "respostaCorreta": false,
           "alternativa": "A"
         },
         {
-          "textoResposta": "14",
+          "textoResposta": "15",
           "respostaCorreta": false,
           "alternativa": "B"
         },
         {
-          "textoResposta": "2",
+          "textoResposta": "8",
           "respostaCorreta": true,
           "alternativa": "C"
         },
         {
-          "textoResposta": "42",
+          "textoResposta": "22",
+          "respostaCorreta": false,
+          "alternativa": "D"
+        }
+      ],
+      "dificuldadePergunta": "dificil"
+    },
+    {
+      "id": 1,
+      "enunciado": "Qual o valor que será atribuido a i?\nint i \u003d Math.Pow(2,3)",
+      "respostas": [
+        {
+          "textoResposta": "6",
+          "respostaCorreta": false,
+          "alternativa": "A"
+        },
+        {
+          "textoResposta": "15",
+          "respostaCorreta": false,
+          "alternativa": "B"
+        },
+        {
+          "textoResposta": "8",
+          "respostaCorreta": true,
+          "alternativa": "C"
+        },
+        {
+          "textoResposta": "22",
           "respostaCorreta": false,
           "alternativa": "D"
         }
@@ -113,6 +194,11 @@
     {
       "numero": 1,
       "texto": "Estava o Heroi andando perto",
+      "capituloFinal": false
+    },
+    {
+      "numero": 2,
+      "texto": "Capitulo 2",
       "capituloFinal": false
     }
   ],
@@ -128,7 +214,7 @@
           "contexto": "vitoria"
         }
       ],
-      "nivel": "dificil"
+      "nivel": "facil"
     },
     {
       "id": 1,
@@ -141,23 +227,10 @@
           "contexto": "vitoria"
         }
       ],
-      "nivel": "dificil"
+      "nivel": "medio"
     },
     {
       "id": 2,
-      "vida": 100,
-      "nome": "Garticoz",
-      "poderAtaque": 20,
-      "falas": [
-        {
-          "texto": "hahaha você vai morreu",
-          "contexto": "vitoria"
-        }
-      ],
-      "nivel": "dificil"
-    },
-    {
-      "id": 3,
       "vida": 100,
       "nome": "Garticoz",
       "poderAtaque": 20,
@@ -173,6 +246,6 @@
   "configuracaoJogo": {
     "dificuldadeJogo": "dificil",
     "quantidadeMaximaPerguntas": 10,
-    "quantidadeMaximaInimigos": 0
+    "quantidadeMaximaInimigos": 10
   }
 }

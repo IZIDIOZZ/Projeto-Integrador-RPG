@@ -16,23 +16,30 @@ public class ProjetoRPG {
 				System.out.println("===================");
 				System.out.println("sonho_de_dev.java");
 				System.out.println("=======OPÇÕES=======");
+				
 				for(OpcaoMenuEnum opc: OpcaoMenuEnum.values()) {
 					if(opc == OpcaoMenuEnum.SEM_ESCOLHA) break;
 					System.out.println((opc.ordinal()+1)+": "+ opc.getEscolhaDificuldade());
 				}
+				
 				System.out.println("===================");
 				System.out.println("Digite o número da opção: ");
 				
 				try{
+					
 				   itemSelecionado = OpcaoMenuEnum.values()[new Scanner(System.in).nextInt()-1];
 				   System.out.println( itemSelecionado);
-				}catch (NullPointerException | ArrayIndexOutOfBoundsException e) {
+				   
+				}catch (Exception e) {
+					ConfiguracaoJogo.LimparTela();
 					itemSelecionado = OpcaoMenuEnum.SEM_ESCOLHA;
 				}
 				switch (itemSelecionado){
+				    
 					case NOVO_JOGO:
 						System.out.println("Opção NOVO JOGO selecionada!");
 						System.out.println("Tenha um bom jogo :)");
+						
 						RPG.IniciaJogo();
 						break;
 						
@@ -65,31 +72,39 @@ public class ProjetoRPG {
 						
 						int escolhaDificuldade = 0;
 						do {
+							
 							System.out.println("Opção DIFICULDADE selecionada!");
 							System.out.println("=======DIFICULDADE=======");
+							
 							for(DificuldadeEnum dif: DificuldadeEnum.values() ) {
 								System.out.println((dif.ordinal()+1)+" -"+dif.getEscolhaDificuldade());
 							}
+							
 							System.out.println("==========================");
 							System.out.println("Selecione a dificuldade do jogo: ");
+							
 							escolhaDificuldade  = new Scanner(System.in).nextInt();
+							
 						}while(!ConfiguracaoJogo.EscolhaDificuldadeSelecionadaExiste(escolhaDificuldade));
 						
 						String dificuldade = DificuldadeEnum.values()[escolhaDificuldade-1].getEscolhaDificuldade();	
 						ConfiguracaoJogo.ConfiguraDificuldade(dificuldade);
 						break;
+						
 					case SAIR:
 						System.out.println("Opção SAIR selecionada!");
 						System.out.println("O jogo será encerrado.");
 						System.exit(0);
 						break;
+						
 					case SEM_ESCOLHA:
 						System.out.println("NADA SELECIONADO");
 						break;
 				}
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			ConfiguracaoJogo.LimparTela();
+			System.out.println("Um erro inesperado ocorreu.");
 		}
 	}
 }

@@ -34,23 +34,30 @@ public class Pergunta {
 	/*Este método verifica a dificuldade do jogo definida no Json e 
 	pega somente as perguntas que estejam com este nivel de dificuldade*/
 	public static List<Pergunta> BuscaPerguntasComBaseDificuldadeGeral(RPG base) {
-
-		//o código resumido em uma linha 
-		List<Pergunta> perguntasRetorno = new ArrayList<Pergunta>();
-		ConfiguracaoJogo configJogo = base.getConfiguracaoJogo();
-		int contaPerguntas = 0;
-		//Percorre o as perguntas para verificar a propriedade de dificuldade delas
-		for(Pergunta perg: base.getPerguntas()) {
-			System.out.println(configJogo.getDificuldadeJogo());
-			//verifica se a dificuldade da pergutna é igual a dificuldade geral do arquivo Json
-			if(perg.getDificuldadePergunta().equals(configJogo.getDificuldadeJogo())
-				&& contaPerguntas <= configJogo.getQuantidadeMaximaPerguntas()) {
-				perguntasRetorno.add(perg);
+		try {
+			//o código resumido em uma linha 
+			List<Pergunta> perguntasRetorno = new ArrayList<Pergunta>();
+			ConfiguracaoJogo configJogo = base.getConfiguracaoJogo();
+			int contaPerguntas = 0;
+			
+			//RANDOMIZA os elementos na lista de Perguntas
+			Collections.shuffle(perguntasRetorno);	
+			
+			//Percorre o as perguntas para verificar a propriedade de dificuldade delas
+			for(Pergunta perg: base.getPerguntas()) {
+				if(contaPerguntas > configJogo.getQuantidadeMaximaPerguntas()) break;
+				
+				//verifica se a dificuldade da pergutna é igual a dificuldade geral do arquivo Json
+				else if(perg.getDificuldadePergunta().equals(configJogo.getDificuldadeJogo())) {
+					perguntasRetorno.add(perg);
+				}
+				contaPerguntas++;
 			}
-			contaPerguntas++;
+			
+			return perguntasRetorno;
+			
+		} catch (Exception e) {
+			throw e;
 		}
-		//RANDOMIZA os elementos na lista de Perguntas
-		Collections.shuffle(perguntasRetorno);	
-		return perguntasRetorno;
 	}
 }

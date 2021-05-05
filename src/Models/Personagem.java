@@ -40,10 +40,16 @@ public class Personagem {
 		this.vida -= inimigo.getPoderAtaque();
 	}
 	
-	public void Batalhar(Personagem inimigo, List<Pergunta>perguntas) {		
-		int i = perguntas.size();
+	public void Batalhar(List<Personagem> inimigo, List<Pergunta>perguntas,int turno) {		
+		int quantidadePerguntasFeitas = 0;
+		
+		System.out.println(inimigo.get(turno));
+		System.out.println(perguntas.size());
+		
 		for(Pergunta perg: perguntas) {
-				if(inimigo.getVida() <=0 || this.getVida() <=0 || i == 0) break;
+			
+				if(inimigo.get(turno).getVida() <=0 || this.getVida() <=0 || quantidadePerguntasFeitas >=  perguntas.size()) break;
+				
 				Resposta respostaCorreta = new Resposta();
 				System.out.println(perg.getEnunciado());
 				
@@ -55,14 +61,17 @@ public class Personagem {
 				}
 				
 				if(respostaCorreta.RespostaCorreta(new Scanner(System.in).next(),respostaCorreta)){
-					inimigo.SofrerDano(this);
+					inimigo.get(turno).SofrerDano(this);
 				}else {
-					this.SofrerDano(inimigo);
+					this.SofrerDano(inimigo.get(turno));
 				}
 				System.out.println("vida do jogador - "+this.getVida());
-				System.out.println("vida do inimigo - "+inimigo.getVida());
-				i--;
+				System.out.println("vida do inimigo - "+inimigo.get(turno).getVida());
+				
+				perguntas.remove(perguntas.get(quantidadePerguntasFeitas));
+				quantidadePerguntasFeitas++;
 		}
+		System.out.println(perguntas.size());
 	}
 	
 	public static List<Personagem> BuscaInimigosComBaseDificuldadeGeral(RPG base){
@@ -71,17 +80,21 @@ public class Personagem {
 		List<Personagem> inimigos = new ArrayList<Personagem>();
 		ConfiguracaoJogo configJogo = base.getConfiguracaoJogo();
 		int contadorInimigos = 0;
+		
+		//RANDOMIZA os elementos na lista de inimigos
+		Collections.shuffle(inimigos);
+		
 		//Percorre o as perguntas para verificar a propriedade de dificuldade delas
 		for(Personagem inim: base.getInimigos()) {
-			//verifica se a dificuldade da pergutna é igual a dificuldade geral do arquivo Json
-			if(inim.getNivel().equals(configJogo.getDificuldadeJogo()) 
-				&& contadorInimigos <= configJogo.getQuantidadeMaximaInimigos()) {
+			if(contadorInimigos > configJogo.getQuantidadeMaximaInimigos()) break;
+			
+			//verifica se a dificuldade do inimigo é igual a dificuldade geral do arquivo Json
+			if(inim.getNivel().equals(configJogo.getDificuldadeJogo())) {
 				inimigos.add(inim);
 			}
 			contadorInimigos++;
 		}
-		//RANDOMIZA os elementos na lista de inimigos
-		Collections.shuffle(inimigos);
+		
 		return inimigos;
 	}
 }

@@ -23,11 +23,11 @@ public class RPG {
 	public void setPerguntas(List<Pergunta> perguntas) { this.perguntas = perguntas; } 
 	
 	
-	//método responsável pelo início do jogo
+	
 		public static void IniciaJogo() throws IOException {
 			//Cria um objeto do tipo Configuracao que será usado para gerenciar todo o jogo
 			RPG base = new RPG();
-			
+			int turno = 0;
 			//Chama o método que preenche o objeto com os dados do json
 			base = ConfiguracaoJogo.ConfiguraJogo();
 			System.out.println("Caro jogador, insira seu Nome");
@@ -41,17 +41,30 @@ public class RPG {
 			
 			List<Personagem> inimigos = Personagem.BuscaInimigosComBaseDificuldadeGeral(base);
 			
+//			System.out.println(perguntas.size());
 			for(Capitulo capitulo: base.getCapitulos()) {
-				System.out.println("OPA");
-				jogador.Batalhar(inimigos.get(0),perguntas);
 				
+				System.out.println(inimigos.size());
+				
+				if(inimigos.size() == 0){
+					System.out.println("Não há mais inimigos");
+				}
+				else if(perguntas.size() == 0){
+					System.out.println("Não há mais perguntas");
+				}
+				
+				jogador.Batalhar(inimigos,perguntas,turno);
+				
+//				System.out.println(perguntas.size());
 				if(jogador.getVida() <= 0) 
 			    {
 					System.out.println("Você perdeu!");
 					break;
-				}else {
+				}else if(jogador.getVida() > 0 && inimigos.get(turno).getVida() > 0){
 					System.out.println("Você ganhou esse turno parabéns");
 				}
+				
+				else turno++;
 			}
 		}
 }
