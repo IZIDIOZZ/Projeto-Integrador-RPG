@@ -32,10 +32,13 @@ public class RPG {
 			
 			//Chama o método que preenche o objeto com os dados do json
 			base = ConfiguracaoJogo.ConfiguraJogo();
-			System.out.println("Caro jogador, insira seu Nome");
+			System.out.println("Caro jogador, insira seu Nome: ");
 			
 			//Cria um novo personagem para o jogador
 			Personagem jogador = new Personagem(new Scanner(System.in).next(), vida, poderAtaque);	
+			System.out.println("Seu personagem foi Criado:\nNome:"
+								+jogador.getNome()+"\nVida:"
+					            +vida+"\nPoder de Ataque: "+poderAtaque);
 			
 			/*Pega as perguntas que tiverem o mesmo nível de 
 			dificuldade da propriedade de dificuldade do Json*/
@@ -43,30 +46,24 @@ public class RPG {
 			
 			List<Personagem> inimigos = Personagem.BuscaInimigosComBaseDificuldadeGeral(base);
 			
-			
-//			System.out.println(perguntas.size());
 			for(Capitulo capitulo: base.getCapitulos()) {
 				
-				System.out.println(inimigos.size());
-				
-				if(inimigos.size() == 0){
-					System.out.println("Não há mais inimigos");
-				}
-				else if(perguntas.size() == 0){
-					System.out.println("Não há mais perguntas");
-				}
-				
-				jogador.Batalhar(inimigos,perguntas);
-				
-//				System.out.println(perguntas.size());
-				if(jogador.getVida() <= 0 || jogador.getVida() < inimigos.get(0).getVida()) 
-			    {
-					System.out.println("Você perdeu!");
-					break;
-				}else if(jogador.getVida() > inimigos.get(0).getVida()){
-					System.out.println("Você ganhou esse turno parabéns");
-				}
-			}
-		}
+					if(perguntas.isEmpty() || inimigos.isEmpty()) {
+						System.out.println("Parece que as perguntas ou os inimigos acabaram.");
+						break;
+					}
+					System.out.println(capitulo.getTexto());
+					
+					jogador.Batalhar(inimigos,perguntas);
+					if(jogador.getVida() <= 0 || jogador.getVida() < inimigos.get(0).getVida()) 
+					{
+						System.out.println("Você perdeu!");
+						break;
+				    }else if(jogador.getVida() > inimigos.get(0).getVida()){
+						System.out.println("Você ganhou esse turno parabéns");
+				    }
+			}	
+	}
 }
+
 

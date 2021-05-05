@@ -57,7 +57,6 @@ public class Pergunta {
 				}
 				contaPerguntas++;
 			}
-			
 			return perguntasRetorno;
 			
 		} catch (Exception e) {

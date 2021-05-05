@@ -53,8 +53,7 @@ public class Personagem {
 		if(perguntas.isEmpty() || inimigos.isEmpty()) return;
 		
 		Personagem inimigo = inimigos.get(0);
-		System.out.println("perguntas - "+perguntas.size());
-		System.out.println("inimigos - "+inimigos.size());
+		System.out.println(String.format("A batalha contra %s vai começar", inimigo.getNome()));
 		
 		for(Pergunta pergunta: perguntas) {
 			
@@ -76,8 +75,8 @@ public class Personagem {
 					this.SofrerDano(inimigo);
 				}
 				
-				System.out.println("vida do jogador - "+this.getVida());
-				System.out.println("vida do inimigo - "+inimigo.getVida());
+				System.out.println("vida de "+this.getNome()+" - "+this.getVida());
+				System.out.println("vida de "+inimigo.getNome()+" - "+inimigo.getVida());
 				
 				pergunta.setJaFoiFeita(true);	
 		}
