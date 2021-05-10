@@ -1,7 +1,7 @@
 package Models;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Pergunta {
 	private int id;
@@ -39,28 +39,21 @@ public class Pergunta {
 	pega somente as perguntas que estejam com este nivel de dificuldade*/
 	public static List<Pergunta> BuscaPerguntasComBaseDificuldadeGeral(RPG base) {
 		try {
-			//o código resumido em uma linha 
-			List<Pergunta> perguntasRetorno = new ArrayList<Pergunta>();
+		
 			ConfiguracaoJogo configJogo = base.getConfiguracaoJogo();
-			int contaPerguntas = 0;
-			
 			//RANDOMIZA os elementos na lista de Perguntas
-			Collections.shuffle(perguntasRetorno);	
+			Collections.shuffle(base.getPerguntas());	
 			
-			//Percorre o as perguntas para verificar a propriedade de dificuldade delas
-			for(Pergunta perg: base.getPerguntas()) {
-				if(contaPerguntas > configJogo.getQuantidadeMaximaPerguntas()) break;
-				
-				//verifica se a dificuldade da pergutna é igual a dificuldade geral do arquivo Json
-				else if(perg.getDificuldadePergunta().equals(configJogo.getDificuldadeJogo())) {
-					perguntasRetorno.add(perg);
-				}
-				contaPerguntas++;
-			}
-			return perguntasRetorno;
-			
+			return base.getPerguntas()
+					  .stream()
+					  .filter(x->x.getDificuldadePergunta().equals(configJogo.getDificuldadeJogo()))
+					  .limit(configJogo.getQuantidadeMaximaPerguntas())
+					  .collect(Collectors.toList());
 		} catch (Exception e) {
 			throw e;
 		}
+	}
+	public static List<Pergunta> RetornaPerguntasQueNaoForamFeitas(List<Pergunta>perguntas) {	
+		return perguntas.stream().filter(pergunta->pergunta.jaFoiFeita() == false).collect(Collectors.toList());
 	}
 }

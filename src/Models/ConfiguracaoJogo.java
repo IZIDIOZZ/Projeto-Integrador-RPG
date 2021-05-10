@@ -13,8 +13,6 @@ import java.util.Random;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import Enumerations.DificuldadeEnum;
-
 public class ConfiguracaoJogo {
 
 	private String dificuldadeJogo;
@@ -82,29 +80,6 @@ public class ConfiguracaoJogo {
 		//iteramos a lista e passamos cada linha para a variável retorno
 		for(String e : linhas) { retorno += e + "\n";}
 		return retorno;
-	}
-	
-	//código que limpa a tela do console
-	public static void  LimparTela(){
-		try {
-			/*chama a classe ProcessBuilder que é responsável por executar comandos
-			  através de uma aplicação, neste caso estamos usando o cmd*/
-		  new ProcessBuilder("cmd.exe","/c","cls").inheritIO().start().waitFor();
-		
-		} catch (Exception e) {
-			System.out.println("Não foi possível limpar a tela");
-		}
-	}
-	
-	public static boolean EscolhaDificuldadeSelecionadaExiste(int indexEscolhaDificuldade) {
-		boolean escolhaExiste = false;
-		for(DificuldadeEnum dif: DificuldadeEnum.values() ) {
-			if(indexEscolhaDificuldade == (dif.ordinal()+1)) {
-				escolhaExiste = true; 
-				break;
-			} 
-		}
-		return escolhaExiste;
 	}
 	
 	public static int GeraNumeroAleatorioPorIntervalo(int valorInicial, int valorFinal) {

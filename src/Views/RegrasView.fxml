@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="pnlGeneral" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="682.0" prefWidth="1028.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.RegrasController">
+   <children>
+      <ImageView fitHeight="682.0" fitWidth="1028.0" onDragDetected="#voltarMenuView" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/background-img.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblVersaoJogo" layoutX="950.0" layoutY="632.0" text="v1.0.0" textFill="#eceded">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Pane layoutX="45.0" layoutY="134.0" opacity="0.59" prefHeight="513.0" prefWidth="695.0" style="-fx-background-color: black;" />
+      <Label layoutX="47.0" layoutY="137.0" prefHeight="519.0" prefWidth="695.0" text="- Você deverá acertar a resposta das perguntas &#10;   para causar dano no inimigo.&#10;&#10;- Caso você erre a resposta, sofrerá dano.&#10;&#10;- Você deverá fazer a barra de vida do inimigo &#10;   chegar a zero para ganhar a batalha.&#10;&#10;- Se sua barra de vida chegar a zero primeiro, você &#10;   perderá a batalha.&#10;&#10;- Divirta-se! &#10;" textFill="#eceded">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnVoltar" contentDisplay="RIGHT" layoutX="911.0" layoutY="14.0" mnemonicParsing="false" onAction="#voltarMenuView" prefHeight="46.0" prefWidth="103.0" style="-fx-background-color: #C8C9CB;" text="Voltar" textFill="#232a37">
+         <font>
+            <Font name="Arial" size="22.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ImageView fitHeight="214.0" fitWidth="276.0" layoutX="746.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/logo-app.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="45.0" layoutY="66.0" text="Regras do Jogo" textFill="#eceded">
+         <font>
+            <Font size="39.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

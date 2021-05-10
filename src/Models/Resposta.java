@@ -23,14 +23,4 @@ public class Resposta {
 	public void setAlternativa(char alternativa) {
 		this.alternativa = alternativa;
 	}
-	
-	//método que verifica se a resposta está correta
-	public boolean RespostaCorreta(String alternativaCorreta, Resposta resposta){ 
-		boolean ehCorreta = false;
-		if((Character.toUpperCase(alternativaCorreta.charAt(0)) == Character.toUpperCase(resposta.getAlternativa()) 
-		   || (alternativaCorreta.toUpperCase().equals(resposta.getTextoResposta().toUpperCase())))) {
-		   ehCorreta = true;
-		}
-		return ehCorreta;
-	}
 }

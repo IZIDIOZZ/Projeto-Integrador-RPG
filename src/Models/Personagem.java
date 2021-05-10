@@ -1,9 +1,7 @@
 package Models;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class Personagem {
@@ -36,6 +34,7 @@ public class Personagem {
 	public String getNivel() {return nivel;}
 	public void setNivel(String nivel) {this.nivel = nivel;}
 	
+	public Personagem() {}
 	public Personagem(String nome, int vida,  int poderAtaque ){
 		this.nome = nome;
 		this.vida = vida;
@@ -43,74 +42,31 @@ public class Personagem {
 	}
 	
 	public void SofrerDano(Personagem inimigo){
+		if(this.vida < inimigo.poderAtaque) {
+			this.vida = 0;
+			return;
+		}
 		this.vida -= inimigo.getPoderAtaque();
 	}
 	
-	public void Batalhar(List<Personagem> inimigos, List<Pergunta>perguntas) {		
-		inimigos = RetornaInimigosQueNaoLutaram(inimigos);
-		perguntas = RetornaPerguntasQueNaoForamFeitas(perguntas);
-		
-		if(perguntas.isEmpty() || inimigos.isEmpty()) return;
-		
-		Personagem inimigo = inimigos.get(0);
-		System.out.println(String.format("A batalha contra %s vai começar", inimigo.getNome()));
-		
-		for(Pergunta pergunta: perguntas) {
-			
-				if(inimigo.getVida() <=0 || this.getVida() <=0) break;
-				
-				Resposta respostaCorreta = new Resposta();
-				System.out.println(pergunta.getEnunciado());
-				
-				for(Resposta resp : pergunta.getRespostas()){
-					System.out.println(resp.getAlternativa()+") "+resp.getTextoResposta());
-					if(resp.isRespostaCorreta()) {
-						respostaCorreta = resp;
-					}				
-				}
-				
-				if(respostaCorreta.RespostaCorreta(new Scanner(System.in).next(),respostaCorreta)){
-					inimigo.SofrerDano(this);
-				}else {
-					this.SofrerDano(inimigo);
-				}
-				
-				System.out.println("vida de "+this.getNome()+" - "+this.getVida());
-				System.out.println("vida de "+inimigo.getNome()+" - "+inimigo.getVida());
-				
-				pergunta.setJaFoiFeita(true);	
-		}
-		inimigo.setJaLutou(true);
-	}
-	
-	public List<Personagem> RetornaInimigosQueNaoLutaram(List<Personagem> inimigos) {
+	public static List<Personagem> RetornaInimigosQueNaoLutaram(List<Personagem> inimigos) {
 		return inimigos.stream().filter(inimigo->inimigo.jaLutou == false).collect(Collectors.toList());
 	}
 	
-	public List<Pergunta> RetornaPerguntasQueNaoForamFeitas(List<Pergunta>perguntas) {	
-		return perguntas.stream().filter(pergunta->pergunta.jaFoiFeita() == false).collect(Collectors.toList());
-	}
 	public static List<Personagem> BuscaInimigosComBaseDificuldadeGeral(RPG base){
-
-		//o código resumido em uma linha 
-		List<Personagem> inimigos = new ArrayList<Personagem>();
-		ConfiguracaoJogo configJogo = base.getConfiguracaoJogo();
-		int contadorInimigos = 0;
-		
-		//RANDOMIZA os elementos na lista de inimigos
-		Collections.shuffle(inimigos);
-		
-		//Percorre o as perguntas para verificar a propriedade de dificuldade delas
-		for(Personagem inim: base.getInimigos()) {
-			if(contadorInimigos > configJogo.getQuantidadeMaximaInimigos()) break;
+		try{
+			ConfiguracaoJogo configJogo = base.getConfiguracaoJogo();
+			//RANDOMIZA os elementos na lista de inimigos
+			Collections.shuffle(base.getInimigos());
 			
-			//verifica se a dificuldade do inimigo é igual a dificuldade geral do arquivo Json
-			if(inim.getNivel().equals(configJogo.getDificuldadeJogo())) {
-				inimigos.add(inim);
-			}
-			contadorInimigos++;
+			return base.getInimigos()
+					   .stream()
+					   .filter(x->x.getNivel().equals(configJogo.getDificuldadeJogo()))
+					   .limit(configJogo.getQuantidadeMaximaInimigos())
+					   .collect(Collectors.toList());
+			
+		} catch (Exception e) {
+			throw e;
 		}
-		
-		return inimigos;
 	}
 }

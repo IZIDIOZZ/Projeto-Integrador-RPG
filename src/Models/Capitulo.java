@@ -23,6 +23,4 @@ public class Capitulo {
 	public void setCapituloFinal(boolean capituloFinal) {
 		this.capituloFinal = capituloFinal;
 	}
-
-	
 }
