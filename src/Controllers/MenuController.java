@@ -4,6 +4,8 @@ import java.io.IOException;
 
 import Classes.Helper;
 import Enumerations.SoundsEnum;
+import Models.ConfiguracaoJogo;
+import Models.RPG;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -62,5 +64,10 @@ public class MenuController  {
     public void BatalhaView(ActionEvent event) throws IOException {
     	Helper.Reproduzir(SoundsEnum.CLIQUE_BOTAO);
     	new Helper().NavegarEntrePagina(event,"../Views/BatalhaView.fxml");
+    }
+    
+    @FXML
+    public void initialize() throws Exception {   
+    	Helper.SetaVersaoJogo(lblVersaoJogo);
     }
 }

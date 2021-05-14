@@ -50,11 +50,11 @@ public class DificuldadeController {
     @SuppressWarnings("serial")
 	@FXML
     public void initialize() throws Exception {   	
-    	listaBotoes = new ArrayList<Label>(){{add(btnDificuldadeFacil);}
-    										 {add(btnDificuldadeMedio);}
-    										 {add(btnDificuldadeDificil);}};
+     listaBotoes = new ArrayList<Label>(){{add(btnDificuldadeFacil);}
+    									  {add(btnDificuldadeMedio);}
+    									  {add(btnDificuldadeDificil);}};
      PintaBotaoSelecionado();									 
-    	
+  	 Helper.SetaVersaoJogo(lblVersaoJogo); 	
     }
     public void PintaBotaoSelecionado() throws IOException {
     	RPG base = ConfiguracaoJogo.ConfiguraJogo();

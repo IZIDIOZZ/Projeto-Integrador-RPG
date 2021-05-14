@@ -155,25 +155,7 @@ public class BatalhaController {
 	    		quantidadeRepostasErradas = 0,
 	    		quantidadePerguntasFeitas = 0;
 	    
-		public void CarregaParciaisFinais(String cor) {
-	   
-	    	pnlParciaisFinal.setVisible(true);
-	    	
-	    	lblNomeJogadorFinal.setText(jogador.getNome());
-	    	lblVidaFinalJogador.setText(String.valueOf(jogador.getVida()));
-	    	
-	    	lblNomeInimigoFinal.setText(inimigos.get(0).getNome());
-	    	lblVidaFinalInimigo.setText(String.valueOf(inimigos.get(0).getVida()));
-	    	
-	    	lblQuantidadeRespostasCertas.setText(String.valueOf(quantidadeRepostasCorreta));
-	    	lblQuantidadeRespostasErradas.setText(String.valueOf(quantidadeRepostasErradas));
-	    	lblQuantidadePerguntasFeitas.setText(String.valueOf(quantidadePerguntasFeitas));
-	    	
-	    	for(Node con: pnlParciaisFinal.getChildren() ){
-	    		con.setStyle("-fx-text-fill:"+cor);
-	    	}
-	    }
-	    
+		
 	    @SuppressWarnings("serial")
 		@FXML
 	    public void initialize() throws IOException {
@@ -184,7 +166,7 @@ public class BatalhaController {
 											  { add(btnRespostaB);}
 											  { add(btnRespostaC);}
 											  { add(btnRespostaD);}};
-											   
+			Helper.SetaVersaoJogo(lblVersaoJogo);								   
 	    	perguntas =  Pergunta.BuscaPerguntasComBaseDificuldadeGeral(base);
 			inimigos = Personagem.BuscaInimigosComBaseDificuldadeGeral(base);
 	    	lblQuantidadePerguntasRestante.setText(String.valueOf(perguntas.size()));
@@ -324,6 +306,25 @@ public class BatalhaController {
     	}
     	
     	CarregaParciaisFinais(corDoTexto);
+    }
+    
+    public void CarregaParciaisFinais(String cor) {
+ 	   
+    	pnlParciaisFinal.setVisible(true);
+    	
+    	lblNomeJogadorFinal.setText(jogador.getNome());
+    	lblVidaFinalJogador.setText(String.valueOf(jogador.getVida()));
+    	
+    	lblNomeInimigoFinal.setText(inimigos.get(0).getNome());
+    	lblVidaFinalInimigo.setText(String.valueOf(inimigos.get(0).getVida()));
+    	
+    	lblQuantidadeRespostasCertas.setText(String.valueOf(quantidadeRepostasCorreta));
+    	lblQuantidadeRespostasErradas.setText(String.valueOf(quantidadeRepostasErradas));
+    	lblQuantidadePerguntasFeitas.setText(String.valueOf(quantidadePerguntasFeitas));
+    	
+    	for(Node con: pnlParciaisFinal.getChildren() ){
+    		con.setStyle("-fx-text-fill:"+cor);
+    	}
     }
     
     @FXML

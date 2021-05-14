@@ -3,6 +3,8 @@ import java.io.IOException;
 import java.util.List;
 
 import Enumerations.SoundsEnum;
+import Models.ConfiguracaoJogo;
+import Models.RPG;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
@@ -47,4 +49,12 @@ public class Helper {
 	public static void ResetaCoresBotao(List<Label> listaButoes) {
 		for(Label btn: listaButoes) { PintaBotao(btn, Color.rgb(219, 219, 219));}
 	}
+	
+	public static void SetaVersaoJogo(Label labelVersao) throws IOException {
+		RPG versao = new RPG();
+		versao = ConfiguracaoJogo.ConfiguraJogo();
+		labelVersao.setText(versao.getConfiguracaoJogo().getVersao());
+	}
+
+	
 }

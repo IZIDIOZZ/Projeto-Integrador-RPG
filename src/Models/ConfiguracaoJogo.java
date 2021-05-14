@@ -18,6 +18,10 @@ public class ConfiguracaoJogo {
 	private String dificuldadeJogo;
 	private int quantidadeMaximaPerguntas;
 	private int quantidadeMaximaInimigos;
+	private String versao;
+	
+	public String getVersao() { return versao; }
+	public void setVersao(String versao) { this.versao = versao;}
 	
 	public String getDificuldadeJogo() {
 		return dificuldadeJogo;
