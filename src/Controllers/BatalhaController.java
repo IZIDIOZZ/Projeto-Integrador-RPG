@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Classes.Helper;
+import Enumerations.SoundsEnum;
 import Models.Capitulo;
 import Models.ConfiguracaoJogo;
 import Models.Pergunta;
@@ -167,6 +168,7 @@ public class BatalhaController {
 	    	lblQuantidadeRespostasCertas.setText(String.valueOf(quantidadeRepostasCorreta));
 	    	lblQuantidadeRespostasErradas.setText(String.valueOf(quantidadeRepostasErradas));
 	    	lblQuantidadePerguntasFeitas.setText(String.valueOf(quantidadePerguntasFeitas));
+	    	
 	    	for(Node con: pnlParciaisFinal.getChildren() ){
 	    		con.setStyle("-fx-text-fill:"+cor);
 	    	}
@@ -229,15 +231,17 @@ public class BatalhaController {
     		return;
     	}
 	    Helper.PintaBotao(btnPressionado,Color.rgb(218, 28, 56)); 
-	    Resposta respostaCorreta = perguntas.get(0).getRespostas().stream().filter(x->x.isRespostaCorreta()).findFirst().get();
+	    Resposta respostaCorreta = perguntas.get(0).getRespostas()
+	    						   .stream()
+	    						   .filter(x->x.isRespostaCorreta())
+	    						   .findFirst().get();
 	    	
 	    Label btnRespostaCorreta = listaBotoes.stream()
-	    								.filter(x->x.getAccessibleText().charAt(0) == respostaCorreta.getAlternativa())
-	    								.findFirst()
-	    								.get();
+	    						   .filter(x->x.getAccessibleText().charAt(0) == respostaCorreta.getAlternativa())
+	    						   .findFirst()
+	    						   .get();
 	    	
 	    Helper.PintaBotao(btnRespostaCorreta,Color.rgb(122, 192, 67)); 	    
-    	
     }
     
     
@@ -255,6 +259,7 @@ public class BatalhaController {
     public void SelecionaResposta(MouseEvent event) {
     	 if(perguntas.isEmpty()) return;
     	 if(perguntas.get(0).jaFoiFeita()) return;
+    	 Helper.Reproduzir(SoundsEnum.CLIQUE_BOTAO);
     	 
     	 Label btn = (Label) event.getSource();
 
@@ -268,21 +273,29 @@ public class BatalhaController {
     	 if(respostaSelecionada.isRespostaCorreta()) {
     		 inimigos.get(0).SofrerDano(jogador);
     		 
-    		 prgVidaInimigo.setProgress((double)(inimigos.get(0).getVida()/100F));
-    		 
-    		 lblNumeroVidaInimigo.setText(String.valueOf(inimigos.get(0).getVida()));
+    		 AtualizaPersonagem(inimigos.get(0), 
+    				            lblNumeroVidaInimigo,
+    				 			prgVidaInimigo,
+    				 			lblNomeInimigo,
+    				 			lblPoderAtaqueInimigo);
     		 
     		 inimigos.get(0).setJaLutou(inimigos.get(0).getVida() <= 0 ? true: false);
-    		 
     		 quantidadeRepostasCorreta++;
+    		 Helper.Reproduzir(SoundsEnum.DANO_INIMIGO);
+    		 Helper.Reproduzir(SoundsEnum.RESPOSTA_CORRETA);
+    		 
     	 }else {
     		 jogador.SofrerDano(inimigos.get(0));
     		 
-    		 prgVidaJogador.setProgress((double)(jogador.getVida()/100F));  
-    		 
-    		 lblNumeroVidaJogador.setText(String.valueOf(jogador.getVida()));
+    		 AtualizaPersonagem(jogador, 
+    				            lblNumeroVidaJogador,
+			 			        prgVidaJogador, 
+			 			        lblNomeJogador, 
+			 			        lblPoderAtaqueJogador);
     		 
     		 quantidadeRepostasErradas++;
+    		 Helper.Reproduzir(SoundsEnum.DANO_JOGADOR);
+    		 Helper.Reproduzir(SoundsEnum.RESPOSTA_ERRADA);
     	 }
     	 perguntas.get(0).setJaFoiFeita(true);
     	 quantidadePerguntasFeitas++;
@@ -325,26 +338,41 @@ public class BatalhaController {
     
     @FXML
     public void IniciaJogoFechaResumoPrincipal(ActionEvent event) throws IOException {
-    	
+    	Helper.Reproduzir(SoundsEnum.CLIQUE_BOTAO);
     	jogador = new Personagem(txtNomeJogador.getText(),
     			ConfiguracaoJogo.GeraNumeroAleatorioPorIntervalo(70, 125),
 				ConfiguracaoJogo.GeraNumeroAleatorioPorIntervalo(10, 35));
     	
-		lblNomeInimigo.setText(inimigos.get(0).getNome());
-		prgVidaInimigo.setProgress(1);
-		lblNumeroVidaInimigo.setText(String.valueOf(inimigos.get(0).getVida()));
-		lblPoderAtaqueInimigo.setText(String.valueOf(inimigos.get(0).getPoderAtaque()));
+		AtualizaPersonagem(inimigos.get(0), 
+				           lblNumeroVidaInimigo,
+				 		   prgVidaInimigo,
+				 		   lblNomeInimigo,
+				 		   lblPoderAtaqueInimigo);
 		
-		lblNomeJogador.setText(jogador.getNome());
-		prgVidaJogador.setProgress(1);
-		lblNumeroVidaJogador.setText(String.valueOf(jogador.getVida()));
-		lblPoderAtaqueJogador.setText(String.valueOf(jogador.getPoderAtaque()));
-		
+		AtualizaPersonagem(jogador, 
+						   lblNumeroVidaJogador,
+					       prgVidaJogador, 
+					       lblNomeJogador, 
+					       lblPoderAtaqueJogador);
 		
 		ConfiguraBatalha();
     	pnlIntroducaoJogo.setVisible(false);
     }
     
+    
+    void AtualizaPersonagem(Personagem personagem,
+    						Label textoVida, 
+    						ProgressBar barraVida, 
+    						Label nomePersonagem,
+    						Label poderAtaque
+    						) {
+    	nomePersonagem.setText(personagem.getNome());
+    	barraVida.setProgress((double)(personagem.getVida()/(double)personagem.getVidaBase()));
+		textoVida.setText(String.valueOf(personagem.getVida()));
+		poderAtaque.setText(String.valueOf(personagem.getPoderAtaque()));
+		
+    }
+ 
     @FXML
     void LiberaBotaoInicioJogo(KeyEvent event) {
     	btnIniciaJogo.setDisable(txtNomeJogador.getText().isEmpty()  ? true: false);

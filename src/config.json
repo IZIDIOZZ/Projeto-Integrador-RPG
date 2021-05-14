@@ -353,6 +353,7 @@
     {
       "id": 0,
       "vida": 130,
+      "vidaBase": 130,
       "nome": "BubbleSurto",
       "poderAtaque": 10,
       "falas": [
@@ -367,6 +368,7 @@
     {
       "id": 1,
       "vida": 110,
+      "vidaBase": 110,
       "nome": "MestreDosMagos",
       "poderAtaque": 25,
       "falas": [
@@ -381,6 +383,7 @@
     {
       "id": 2,
       "vida": 50,
+      "vidaBase": 50,
       "nome": "Garticoz",
       "poderAtaque": 35,
       "falas": [
@@ -395,6 +398,7 @@
     {
       "id": 2,
       "vida": 70,
+      "vidaBase": 70,
       "nome": "Ron",
       "poderAtaque": 30,
       "falas": [
@@ -409,6 +413,7 @@
     {
       "id": 2,
       "vida": 98,
+      "vidaBase": 98,
       "nome": "Grorncu",
       "poderAtaque": 20,
       "falas": [
@@ -423,6 +428,7 @@
     {
       "id": 2,
       "vida": 80,
+      "vidaBase": 80,
       "nome": "Rudver",
       "poderAtaque": 35,
       "falas": [
@@ -436,7 +442,7 @@
     }
   ],
   "configuracaoJogo": {
-    "dificuldadeJogo": "facil",
+    "dificuldadeJogo": "dificil",
     "quantidadeMaximaPerguntas": 10,
     "quantidadeMaximaInimigos": 10
   }

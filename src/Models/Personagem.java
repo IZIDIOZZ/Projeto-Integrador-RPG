@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 public class Personagem {
 	private int id;
 	private int vida;
+	private int vidaBase;
 	private String nome;
 	private int poderAtaque;
 	private List<Fala> falas;
@@ -25,6 +26,9 @@ public class Personagem {
 	public int getVida() {return vida;}
 	public void setVida(int vida) {this.vida = vida;}
 	
+	public void setVidaBase(int vidaBase) { this.vidaBase = vidaBase;}
+	public int getVidaBase() { return vidaBase;}
+	
 	public String getNome() {return nome;}
 	public void setNome(String nome) {this.nome = nome;}
 	
@@ -35,10 +39,12 @@ public class Personagem {
 	public void setNivel(String nivel) {this.nivel = nivel;}
 	
 	public Personagem() {}
+	
 	public Personagem(String nome, int vida,  int poderAtaque ){
 		this.nome = nome;
 		this.vida = vida;
 		this.poderAtaque = poderAtaque;
+		this.vidaBase = vida;
 	}
 	
 	public void SofrerDano(Personagem inimigo){

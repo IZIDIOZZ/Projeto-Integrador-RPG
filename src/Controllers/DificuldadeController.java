@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Classes.Helper;
+import Enumerations.SoundsEnum;
 import Models.ConfiguracaoJogo;
 import Models.RPG;
 import javafx.event.ActionEvent;
@@ -33,6 +34,7 @@ public class DificuldadeController {
     
     @FXML
     public void alteraDificuldadeJogo(MouseEvent event) throws IOException {
+    	Helper.Reproduzir(SoundsEnum.CLIQUE_BOTAO_DIFICULDADE);
     	Label btn = (Label) event.getSource(); 	
     	ConfiguracaoJogo.ConfiguraDificuldade(btn.getAccessibleText());
     	listaBotoes.forEach(x -> x.setStyle("-fx-background-color: #C8C9CB;"));
@@ -41,6 +43,7 @@ public class DificuldadeController {
     
     @FXML
     public void voltarMenuView(ActionEvent event) throws Exception {   	
+    	Helper.Reproduzir(SoundsEnum.CLIQUE_BOTAO_VOLTAR);
     	new Helper().NavegarEntrePagina(event, "../Views/MenuView.fxml");
     }
     

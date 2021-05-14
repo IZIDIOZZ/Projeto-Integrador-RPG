@@ -1,3 +1,5 @@
+import Classes.Helper;
+import Enumerations.SoundsEnum;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,6 +11,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+    	
+       new Helper().ExecutaSom(SoundsEnum.MUSICA_MENU,true,0.3D);
+    	
     	FXMLLoader loader = new FXMLLoader(this.getClass().getResource("Views/MenuView.fxml"));
     	Parent root = loader.load();
     	primaryStage.setTitle("RPG");
