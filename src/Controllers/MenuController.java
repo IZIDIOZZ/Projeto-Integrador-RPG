@@ -13,7 +13,9 @@ import javafx.scene.layout.Pane;
 
 public class MenuController  {
 	
-	
+	/*propriedades que representam os Nodes que existe no arquivo da View,
+	 * através delas pode-se manipular os valores do componentes.
+	 */
     @FXML
     private Pane pnlGeneral;
 
@@ -36,9 +38,14 @@ public class MenuController  {
     private Label lblVersaoJogo;
     
     
+    //Métodos para acessar as opções na View de Menu
     @FXML
     public void dificuldadeView(ActionEvent event) throws IOException{
+    	
+    	//reproduz o som de Clique usando o método da classe Helper com o Enum de sons como parâmetro.
     	Helper.Reproduzir(SoundsEnum.CLIQUE_BOTAO);
+    	
+    	//Navega para a View passada como parâmetro
     	new Helper().NavegarEntrePagina(event,"../Views/DificuldadeView.fxml");
     }
     
@@ -66,6 +73,9 @@ public class MenuController  {
     	new Helper().NavegarEntrePagina(event,"../Views/BatalhaView.fxml");
     }
     
+    /*O Initialize é um método que é executado sempre após o carregamento dos Nodes(componente)
+	    Nesse caso logo após da Label de versão ser carregada na View será passado o valor da versão
+	    contido no arquivo json*/
     @FXML
     public void initialize() throws Exception {   
     	Helper.SetaVersaoJogo(lblVersaoJogo);

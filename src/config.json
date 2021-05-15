@@ -442,7 +442,7 @@
     }
   ],
   "configuracaoJogo": {
-    "dificuldadeJogo": "facil",
+    "dificuldadeJogo": "dificil",
     "quantidadeMaximaPerguntas": 10,
     "quantidadeMaximaInimigos": 10,
     "versao": "v1.1.0"

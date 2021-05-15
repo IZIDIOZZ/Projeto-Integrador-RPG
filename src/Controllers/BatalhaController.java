@@ -254,7 +254,7 @@ public class BatalhaController {
     	 
     	 if(respostaSelecionada.isRespostaCorreta()) {
     		 inimigos.get(0).SofrerDano(jogador);
-    		 
+    		
     		 AtualizaPersonagem(inimigos.get(0), 
     				            lblNumeroVidaInimigo,
     				 			prgVidaInimigo,
@@ -370,8 +370,7 @@ public class BatalhaController {
     	nomePersonagem.setText(personagem.getNome());
     	barraVida.setProgress((double)(personagem.getVida()/(double)personagem.getVidaBase()));
 		textoVida.setText(String.valueOf(personagem.getVida()));
-		poderAtaque.setText(String.valueOf(personagem.getPoderAtaque()));
-		
+		poderAtaque.setText(String.valueOf(personagem.getPoderAtaque()));		
     }
  
     @FXML
