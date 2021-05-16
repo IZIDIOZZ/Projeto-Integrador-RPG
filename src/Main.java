@@ -8,7 +8,11 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-
+	
+	/*Como desenvolvedores deixamos aqui nossa aversão a inserir muitos comentários nesse projeto.
+	 *Afinal acreditamos que um bom código não precisa de comentários, se auto explica.
+	 *Maaaas, por questões de nota vamos inserir.*/
+	
     @Override
     public void start(Stage primaryStage) throws Exception{
     	

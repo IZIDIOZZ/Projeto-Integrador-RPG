@@ -9,10 +9,10 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Random;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+//Modelo da configuração do jogo que es´ta no JSON
 public class ConfiguracaoJogo {
 
 	private String dificuldadeJogo;
@@ -57,18 +57,33 @@ public class ConfiguracaoJogo {
 		return config;
 	}
 	
+	/*Método responsável pela alteração da dificuldade geral do jogo direto no JSON.
+	 *A alteração acontece alterando primeiro o objeto que representa o JSON e depois 
+	 *é sobrescrito todo o arquivo JSON com base nesse objeto alterado.
+	 */
 	public static void ConfiguraDificuldade(String dificuldadeJogo) throws IOException {
 		
 		//Chama o método que lê o arquivo json e passa pra uma String
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 		RPG config = ConfiguraJogo();
+		
+		//Altera a propriedade de dificuldade do objeto que representa o JSON
 		config.getConfiguracaoJogo().setDificuldadeJogo(dificuldadeJogo);
+		
+		//Escreve o objeto em forma de texto no arquivo JSON
 		EscreverArquivoJson(gson.toJson(config, RPG.class),"./src/config.json");
 	}
 	
+	//Método responsável por alterar o arquivo Json passando um novo texto
 	public static void EscreverArquivoJson(String novoTexto,String caminho) throws IOException {
+		
+		//Cria um objeto de escrita para acessar e alterar o aqruivo JSON 
 		OutputStreamWriter out = new OutputStreamWriter(new FileOutputStream(caminho), StandardCharsets.UTF_8);
+		
+		//Altera o Arquivo substituindo o valor atual do aqruivo pela String passada
 		out.write(novoTexto);
+		
+		//Fecha o Stream
 		out.close();
 	}
 	
@@ -86,6 +101,7 @@ public class ConfiguracaoJogo {
 		return retorno;
 	}
 	
+	//Método usado para gerar numeros aleatórios entre um intervalo dado
 	public static int GeraNumeroAleatorioPorIntervalo(int valorInicial, int valorFinal) {
 			return new Random().nextInt(valorFinal-valorInicial) + valorInicial;
 	}

@@ -1,11 +1,8 @@
 package Controllers;
 
 import java.io.IOException;
-
 import Classes.Helper;
 import Enumerations.SoundsEnum;
-import Models.ConfiguracaoJogo;
-import Models.RPG;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;

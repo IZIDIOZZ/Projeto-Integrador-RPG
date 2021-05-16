@@ -337,18 +337,6 @@
       "jaFoiFeita": false
     }
   ],
-  "capitulos": [
-    {
-      "numero": 1,
-      "texto": "Estava o Heroi cansado em seu quarto tentando programar e derrepente acorda em um mundo estranho.\nAgora você tem que lutar contra inimigos.",
-      "capituloFinal": false
-    },
-    {
-      "numero": 2,
-      "texto": "Capitulo 2",
-      "capituloFinal": false
-    }
-  ],
   "inimigos": [
     {
       "id": 0,
@@ -356,12 +344,6 @@
       "vidaBase": 130,
       "nome": "BubbleSurto",
       "poderAtaque": 10,
-      "falas": [
-        {
-          "texto": "hahaha você vai morreu",
-          "contexto": "vitoria"
-        }
-      ],
       "nivel": "facil",
       "jaLutou": false
     },
@@ -371,12 +353,6 @@
       "vidaBase": 110,
       "nome": "MestreDosMagos",
       "poderAtaque": 25,
-      "falas": [
-        {
-          "texto": "hahaha você vai morreu",
-          "contexto": "vitoria"
-        }
-      ],
       "nivel": "medio",
       "jaLutou": false
     },
@@ -386,12 +362,6 @@
       "vidaBase": 50,
       "nome": "Garticoz",
       "poderAtaque": 35,
-      "falas": [
-        {
-          "texto": "hahaha você vai morreu",
-          "contexto": "vitoria"
-        }
-      ],
       "nivel": "dificil",
       "jaLutou": false
     },
@@ -401,12 +371,6 @@
       "vidaBase": 70,
       "nome": "Ron",
       "poderAtaque": 30,
-      "falas": [
-        {
-          "texto": "hahaha você vai morreu",
-          "contexto": "vitoria"
-        }
-      ],
       "nivel": "dificil",
       "jaLutou": false
     },
@@ -416,12 +380,6 @@
       "vidaBase": 98,
       "nome": "Grorncu",
       "poderAtaque": 20,
-      "falas": [
-        {
-          "texto": "hahaha você vai morreu",
-          "contexto": "vitoria"
-        }
-      ],
       "nivel": "dificil",
       "jaLutou": false
     },
@@ -431,12 +389,6 @@
       "vidaBase": 80,
       "nome": "Rudver",
       "poderAtaque": 35,
-      "falas": [
-        {
-          "texto": "hahaha você vai morreu",
-          "contexto": "vitoria"
-        }
-      ],
       "nivel": "dificil",
       "jaLutou": false
     }

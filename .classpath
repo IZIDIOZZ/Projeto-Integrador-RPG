@@ -8,7 +8,8 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX13"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX"/>
-	<classpathentry kind="lib" path="C:/Users/danie/Documents/Projetos-Java/Java/hellofx/lib/gson-2.8.6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/danie/Documents/Projetos-Java/Java/hellofx/lib/json-simple-1.1.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JAVAFX"/>
+	<classpathentry kind="lib" path="C:/Users/danie.DESKTOP-P9HUKNU/Documents/projetos-java/dev-quest/lib/gson-2.8.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/danie.DESKTOP-P9HUKNU/Documents/projetos-java/dev-quest/lib/json-simple-1.1.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
