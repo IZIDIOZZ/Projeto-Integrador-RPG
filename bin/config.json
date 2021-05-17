@@ -436,7 +436,7 @@
     }
   ],
   "configuracaoJogo": {
-    "dificuldadeJogo": "facil",
+    "dificuldadeJogo": "dificil",
     "quantidadeMaximaPerguntas": 10,
     "quantidadeMaximaInimigos": 10
   }
