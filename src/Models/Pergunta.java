@@ -3,6 +3,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
+//Modelo que representa as perguntas que existem no JSON
 public class Pergunta {
 	private int id;
 	private String enunciado;
@@ -39,11 +40,14 @@ public class Pergunta {
 	pega somente as perguntas que estejam com este nivel de dificuldade*/
 	public static List<Pergunta> BuscaPerguntasComBaseDificuldadeGeral(RPG base) {
 		try {
-		
+			
+			//Passa a configuração geral do jogo pro objeto de configuração
 			ConfiguracaoJogo configJogo = base.getConfiguracaoJogo();
+			
 			//RANDOMIZA os elementos na lista de Perguntas
 			Collections.shuffle(base.getPerguntas());	
 			
+			//LAMBDA para pegar as perguntas com base na dificuldade geral do jogo no JSON
 			return base.getPerguntas()
 					  .stream()
 					  .filter(x->x.getDificuldadePergunta().equals(configJogo.getDificuldadeJogo()))
@@ -53,7 +57,13 @@ public class Pergunta {
 			throw e;
 		}
 	}
+	
+	//método para retornar as perguntas que não foram feitas ainda
 	public static List<Pergunta> RetornaPerguntasQueNaoForamFeitas(List<Pergunta>perguntas) {	
-		return perguntas.stream().filter(pergunta->pergunta.jaFoiFeita() == false).collect(Collectors.toList());
+		
+		//LAMBDA para pegar somente as perguntas que não foram feitas
+		return perguntas.stream()
+						.filter(pergunta->pergunta.jaFoiFeita() == false)
+						.collect(Collectors.toList());
 	}
 }

@@ -1,5 +1,6 @@
 package Models;
 
+//Modelo para a resposta no JSON
 public class Resposta {
 	private String textoResposta;
 	private boolean respostaCorreta;

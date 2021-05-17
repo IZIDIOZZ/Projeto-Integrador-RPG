@@ -337,100 +337,58 @@
       "jaFoiFeita": false
     }
   ],
-  "capitulos": [
-    {
-      "numero": 1,
-      "texto": "Estava o Heroi cansado em seu quarto tentando programar e derrepente acorda em um mundo estranho.\nAgora você tem que lutar contra inimigos.",
-      "capituloFinal": false
-    },
-    {
-      "numero": 2,
-      "texto": "Capitulo 2",
-      "capituloFinal": false
-    }
-  ],
   "inimigos": [
     {
       "id": 0,
       "vida": 130,
+      "vidaBase": 130,
       "nome": "BubbleSurto",
       "poderAtaque": 10,
-      "falas": [
-        {
-          "texto": "hahaha você vai morreu",
-          "contexto": "vitoria"
-        }
-      ],
       "nivel": "facil",
       "jaLutou": false
     },
     {
       "id": 1,
       "vida": 110,
+      "vidaBase": 110,
       "nome": "MestreDosMagos",
       "poderAtaque": 25,
-      "falas": [
-        {
-          "texto": "hahaha você vai morreu",
-          "contexto": "vitoria"
-        }
-      ],
       "nivel": "medio",
       "jaLutou": false
     },
     {
       "id": 2,
       "vida": 50,
+      "vidaBase": 50,
       "nome": "Garticoz",
       "poderAtaque": 35,
-      "falas": [
-        {
-          "texto": "hahaha você vai morreu",
-          "contexto": "vitoria"
-        }
-      ],
       "nivel": "dificil",
       "jaLutou": false
     },
     {
       "id": 2,
       "vida": 70,
+      "vidaBase": 70,
       "nome": "Ron",
       "poderAtaque": 30,
-      "falas": [
-        {
-          "texto": "hahaha você vai morreu",
-          "contexto": "vitoria"
-        }
-      ],
       "nivel": "dificil",
       "jaLutou": false
     },
     {
       "id": 2,
       "vida": 98,
+      "vidaBase": 98,
       "nome": "Grorncu",
       "poderAtaque": 20,
-      "falas": [
-        {
-          "texto": "hahaha você vai morreu",
-          "contexto": "vitoria"
-        }
-      ],
       "nivel": "dificil",
       "jaLutou": false
     },
     {
       "id": 2,
       "vida": 80,
+      "vidaBase": 80,
       "nome": "Rudver",
       "poderAtaque": 35,
-      "falas": [
-        {
-          "texto": "hahaha você vai morreu",
-          "contexto": "vitoria"
-        }
-      ],
       "nivel": "dificil",
       "jaLutou": false
     }
@@ -438,6 +396,7 @@
   "configuracaoJogo": {
     "dificuldadeJogo": "dificil",
     "quantidadeMaximaPerguntas": 10,
-    "quantidadeMaximaInimigos": 10
+    "quantidadeMaximaInimigos": 10,
+    "versao": "v1.1.0"
   }
 }

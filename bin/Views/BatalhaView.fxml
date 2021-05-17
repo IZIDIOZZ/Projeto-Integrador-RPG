@@ -154,7 +154,7 @@
          <children>
             <Pane layoutY="-1.0" prefHeight="690.0" prefWidth="1038.0" style="-fx-background-color: black;">
                <children>
-                  <Label fx:id="lblTextoIntroducao" alignment="CENTER" layoutX="21.0" layoutY="-9.0" prefHeight="558.0" prefWidth="997.0" style="-fx-label-padding: 20px;" text="A noite e morto de sono, você está trabalhando &#10;no PI, mas sem sucesso acaba adormecendo. &#10;Você então acorda num mundo diferente, &#10;onde uma inteligência artificial te propõe&#10;um desafio: &quot;Vença minhas IAs e prove ser&#10;digno, então lhe ajudarei a terminar o PI&quot;.&#10;Você aceita o desafio, mas fica tão &#10;confuso com isso tudo que &#10;esquece de seu próprio nome..." textAlignment="CENTER" textFill="#eceded">
+                  <Label fx:id="lblTextoIntroducao" alignment="CENTER" layoutX="21.0" layoutY="-15.0" prefHeight="558.0" prefWidth="997.0" style="-fx-label-padding: 20px;" text="A noite e morto de sono, você está trabalhando &#10;no PI, mas sem sucesso acaba adormecendo. &#10;Você então acorda num mundo diferente, &#10;onde uma inteligência artificial te propõe&#10;um desafio: &quot;Vença minhas IAs e prove ser&#10;digno, então lhe ajudarei a terminar o PI&quot;.&#10;Você aceita o desafio, mas fica tão confuso &#10;com isso tudo que esquece de seu próprio nome..." textAlignment="JUSTIFY" textFill="#eceded">
                      <font>
                         <Font size="33.0" />
                      </font>
@@ -170,7 +170,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <TextField fx:id="txtNomeJogador" alignment="CENTER" layoutX="317.0" layoutY="520.0" mouseTransparent="true" onKeyReleased="#LiberaBotaoInicioJogo" prefHeight="59.0" prefWidth="405.0" promptText="Como você se chama mesmo?" style="-fx-background-color: transparent; -fx-border-style: hidden hidden solid hidden; -fx-border-color: white; -fx-text-inner-color: #DBDBDB; -fx-padding: 0px;">
+                  <TextField fx:id="txtNomeJogador" alignment="CENTER" layoutX="317.0" layoutY="505.0" mouseTransparent="true" onKeyReleased="#LiberaBotaoInicioJogo" prefHeight="59.0" prefWidth="405.0" promptText="Como você se chama mesmo?" style="-fx-background-color: transparent; -fx-border-style: hidden hidden solid hidden; -fx-border-color: white; -fx-text-inner-color: #DBDBDB; -fx-padding: 0px;">
                      <font>
                         <Font size="27.0" />
                      </font>
