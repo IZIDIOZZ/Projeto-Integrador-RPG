@@ -1,6 +1,5 @@
 {
   "perguntas": [
-    
     {
       "id": 1,
       "enunciado": "Qual o valor que será atribuido a i?\nint i \u003d Math.Pow(2,3)",
@@ -342,22 +341,22 @@
       "enunciado": "Qual das opções abaixo usa corretamente o IF Ternário?",
       "respostas": [
         {
-          "textoResposta": "boolean ficouDeDP = nota : true ? false ;",
+          "textoResposta": "boolean ficouDeDP \u003d nota : true ? false ;",
           "respostaCorreta": false,
           "alternativa": "A"
         },
         {
-          "textoResposta": "boolean ficouDeDP = nota < 6: true :? false;",
+          "textoResposta": "boolean ficouDeDP \u003d nota \u003c 6: true :? false;",
           "respostaCorreta": false,
           "alternativa": "B"
         },
         {
-          "textoResposta": "boolean ficouDeDP = true : false ? nota < 6 ",
+          "textoResposta": "boolean ficouDeDP \u003d true : false ? nota \u003c 6 ",
           "respostaCorreta": false,
           "alternativa": "C"
         },
         {
-          "textoResposta": "  boolean ficouDeDP = nota < 6 ? true: false;",
+          "textoResposta": "  boolean ficouDeDP \u003d nota \u003c 6 ? true: false;",
           "respostaCorreta": true,
           "alternativa": "D"
         }
@@ -417,9 +416,7 @@
           "respostaCorreta": false,
           "alternativa": "D"
         }
-        
       ],
-      
       "dificuldadePergunta": "medio",
       "jaFoiFeita": false
     },
@@ -448,7 +445,6 @@
           "alternativa": "D"
         }
       ],
-      
       "dificuldadePergunta": "medio",
       "jaFoiFeita": false
     },
@@ -477,36 +473,34 @@
           "alternativa": "D"
         }
       ],
-      
       "dificuldadePergunta": "medio",
       "jaFoiFeita": false
     },
     {
       "id": 18,
-      "enunciado": "Em programação, x = x + 1 pode ser, representado de forma resumida como:",
+      "enunciado": "Em programação, x \u003d x + 1 pode ser, representado de forma resumida como:",
       "respostas": [
         {
-          "textoResposta": "x =+ 1",
+          "textoResposta": "x \u003d+ 1",
           "respostaCorreta": false,
           "alternativa": "A"
         },
         {
-          "textoResposta": "x ==+ 1",
+          "textoResposta": "x \u003d\u003d+ 1",
           "respostaCorreta": false,
           "alternativa": "B"
         },
         {
-          "textoResposta": "x += 1",
+          "textoResposta": "x +\u003d 1",
           "respostaCorreta": true,
           "alternativa": "C"
         },
         {
-          "textoResposta": "x =+= 1",
+          "textoResposta": "x \u003d+\u003d 1",
           "respostaCorreta": false,
           "alternativa": "D"
         }
       ],
-      
       "dificuldadePergunta": "medio",
       "jaFoiFeita": false
     },
@@ -535,7 +529,6 @@
           "alternativa": "D"
         }
       ],
-      
       "dificuldadePergunta": "medio",
       "jaFoiFeita": false
     },
@@ -564,7 +557,6 @@
           "alternativa": "D"
         }
       ],
-      
       "dificuldadePergunta": "medio",
       "jaFoiFeita": false
     },
@@ -654,9 +646,9 @@
     }
   ],
   "configuracaoJogo": {
-    "dificuldadeJogo": "medio",
+    "dificuldadeJogo": "dificil",
     "quantidadeMaximaPerguntas": 10,
     "quantidadeMaximaInimigos": 10,
-    "versao": "v1.1.0"
+    "versao": "v2.1.0"
   }
 }

@@ -2,62 +2,6 @@
   "perguntas": [
     {
       "id": 1,
-      "enunciado": "O que é uma variável?",
-      "respostas": [
-        {
-          "textoResposta": "Estrutura que guarda valores na memória",
-          "respostaCorreta": true,
-          "alternativa": "A"
-        },
-        {
-          "textoResposta": "Varias aves",
-          "respostaCorreta": false,
-          "alternativa": "B"
-        },
-        {
-          "textoResposta": "Estrutura indexada não dinâmica",
-          "respostaCorreta": false,
-          "alternativa": "C"
-        },
-        {
-          "textoResposta": "Um banco de dados",
-          "respostaCorreta": false,
-          "alternativa": "D"
-        }
-      ],
-      "dificuldadePergunta": "facil",
-      "jaFoiFeita": false
-    },
-    {
-      "id": 1,
-      "enunciado": "Qual dos algoritmos abaixo é de ordenação?",
-      "respostas": [
-        {
-          "textoResposta": "Binary Search",
-          "respostaCorreta": false,
-          "alternativa": "A"
-        },
-        {
-          "textoResposta": "Breadth First Search (BFS)",
-          "respostaCorreta": false,
-          "alternativa": "B"
-        },
-        {
-          "textoResposta": "Floyd Warshall",
-          "respostaCorreta": false,
-          "alternativa": "C"
-        },
-        {
-          "textoResposta": "Heap Sort",
-          "respostaCorreta": true,
-          "alternativa": "D"
-        }
-      ],
-      "dificuldadePergunta": "medio",
-      "jaFoiFeita": false
-    },
-    {
-      "id": 1,
       "enunciado": "Qual o valor que será atribuido a i?\nint i \u003d Math.Pow(2,3)",
       "respostas": [
         {
@@ -310,7 +254,7 @@
     },
     {
       "id": 10,
-      "enunciado": "Qual das repostas abaixo não é um tipo primitivo?",
+      "enunciado": "Qual das respostas abaixo não é um tipo primitivo?",
       "respostas": [
         {
           "textoResposta": "String",
@@ -335,11 +279,319 @@
       ],
       "dificuldadePergunta": "dificil",
       "jaFoiFeita": false
+    },
+    {
+      "id": 11,
+      "enunciado": "Qual dos termos abaixo tem relação com um loop?",
+      "respostas": [
+        {
+          "textoResposta": "Concatenação",
+          "respostaCorreta": false,
+          "alternativa": "A"
+        },
+        {
+          "textoResposta": "Iteração",
+          "respostaCorreta": true,
+          "alternativa": "B"
+        },
+        {
+          "textoResposta": "Alteração",
+          "respostaCorreta": false,
+          "alternativa": "C"
+        },
+        {
+          "textoResposta": "Abstração",
+          "respostaCorreta": false,
+          "alternativa": "D"
+        }
+      ],
+      "dificuldadePergunta": "medio",
+      "jaFoiFeita": false
+    },
+    {
+      "id": 12,
+      "enunciado": "Qual das condições abaixo verifica corretamente se um número é par?",
+      "respostas": [
+        {
+          "textoResposta": "if(numero % 2 \u003d\u003d 0)}",
+          "respostaCorreta": true,
+          "alternativa": "A"
+        },
+        {
+          "textoResposta": "if(numero % 2 \u003c\u003d 0)}",
+          "respostaCorreta": false,
+          "alternativa": "B"
+        },
+        {
+          "textoResposta": "if(numero % 2 !\u003d 0)}",
+          "respostaCorreta": false,
+          "alternativa": "C"
+        },
+        {
+          "textoResposta": "if(numero % 2 \u003e\u003d 0)}",
+          "respostaCorreta": false,
+          "alternativa": "D"
+        }
+      ],
+      "dificuldadePergunta": "medio",
+      "jaFoiFeita": false
+    },
+    {
+      "id": 13,
+      "enunciado": "Qual das opções abaixo usa corretamente o IF Ternário?",
+      "respostas": [
+        {
+          "textoResposta": "boolean ficouDeDP \u003d nota : true ? false ;",
+          "respostaCorreta": false,
+          "alternativa": "A"
+        },
+        {
+          "textoResposta": "boolean ficouDeDP \u003d nota \u003c 6: true :? false;",
+          "respostaCorreta": false,
+          "alternativa": "B"
+        },
+        {
+          "textoResposta": "boolean ficouDeDP \u003d true : false ? nota \u003c 6 ",
+          "respostaCorreta": false,
+          "alternativa": "C"
+        },
+        {
+          "textoResposta": "  boolean ficouDeDP \u003d nota \u003c 6 ? true: false;",
+          "respostaCorreta": true,
+          "alternativa": "D"
+        }
+      ],
+      "dificuldadePergunta": "medio",
+      "jaFoiFeita": false
+    },
+    {
+      "id": 14,
+      "enunciado": "Qual dos algoritmos abaixo é de ordenação?",
+      "respostas": [
+        {
+          "textoResposta": "Binary Search",
+          "respostaCorreta": false,
+          "alternativa": "A"
+        },
+        {
+          "textoResposta": "Breadth First Search (BFS)",
+          "respostaCorreta": false,
+          "alternativa": "B"
+        },
+        {
+          "textoResposta": "Floyd Warshall",
+          "respostaCorreta": false,
+          "alternativa": "C"
+        },
+        {
+          "textoResposta": "Heap Sort",
+          "respostaCorreta": true,
+          "alternativa": "D"
+        }
+      ],
+      "dificuldadePergunta": "medio",
+      "jaFoiFeita": false
+    },
+    {
+      "id": 15,
+      "enunciado": "Qual desses conceitos NÃO é um dos pilares da POO?",
+      "respostas": [
+        {
+          "textoResposta": "Herança",
+          "respostaCorreta": false,
+          "alternativa": "A"
+        },
+        {
+          "textoResposta": "Polimorfismo",
+          "respostaCorreta": false,
+          "alternativa": "B"
+        },
+        {
+          "textoResposta": "Injeção de Dependência",
+          "respostaCorreta": true,
+          "alternativa": "C"
+        },
+        {
+          "textoResposta": "Encapsulamento",
+          "respostaCorreta": false,
+          "alternativa": "D"
+        }
+      ],
+      "dificuldadePergunta": "medio",
+      "jaFoiFeita": false
+    },
+    {
+      "id": 16,
+      "enunciado": "Refatoração é o ato de:",
+      "respostas": [
+        {
+          "textoResposta": "Compartilhar estados de variáveis com outros métodos",
+          "respostaCorreta": false,
+          "alternativa": "A"
+        },
+        {
+          "textoResposta": "Diminuir tamanho e complexidade de um código",
+          "respostaCorreta": true,
+          "alternativa": "B"
+        },
+        {
+          "textoResposta": "Ajustar o tamanho do comentários de métodos",
+          "respostaCorreta": false,
+          "alternativa": "C"
+        },
+        {
+          "textoResposta": "Tratar o retorno de um método de Fatorial",
+          "respostaCorreta": false,
+          "alternativa": "D"
+        }
+      ],
+      "dificuldadePergunta": "medio",
+      "jaFoiFeita": false
+    },
+    {
+      "id": 17,
+      "enunciado": "O método responsável por apresentar texto na\n tela de uma Console Application é:",
+      "respostas": [
+        {
+          "textoResposta": "System.in.Println()",
+          "respostaCorreta": false,
+          "alternativa": "A"
+        },
+        {
+          "textoResposta": "System.out.printLn()",
+          "respostaCorreta": false,
+          "alternativa": "B"
+        },
+        {
+          "textoResposta": "System.in.PrintLn()",
+          "respostaCorreta": false,
+          "alternativa": "C"
+        },
+        {
+          "textoResposta": "System.out.println()",
+          "respostaCorreta": true,
+          "alternativa": "D"
+        }
+      ],
+      "dificuldadePergunta": "medio",
+      "jaFoiFeita": false
+    },
+    {
+      "id": 18,
+      "enunciado": "Em programação, x \u003d x + 1 pode ser, representado de forma resumida como:",
+      "respostas": [
+        {
+          "textoResposta": "x \u003d+ 1",
+          "respostaCorreta": false,
+          "alternativa": "A"
+        },
+        {
+          "textoResposta": "x \u003d\u003d+ 1",
+          "respostaCorreta": false,
+          "alternativa": "B"
+        },
+        {
+          "textoResposta": "x +\u003d 1",
+          "respostaCorreta": true,
+          "alternativa": "C"
+        },
+        {
+          "textoResposta": "x \u003d+\u003d 1",
+          "respostaCorreta": false,
+          "alternativa": "D"
+        }
+      ],
+      "dificuldadePergunta": "medio",
+      "jaFoiFeita": false
+    },
+    {
+      "id": 19,
+      "enunciado": "Os Comentários em um código servem para:",
+      "respostas": [
+        {
+          "textoResposta": "Auxiliar o programador a entender \nde forma mais rápida um código",
+          "respostaCorreta": true,
+          "alternativa": "A"
+        },
+        {
+          "textoResposta": "Dizer que o código não se auto-explica \n e que precisa de um texto explicativo.",
+          "respostaCorreta": false,
+          "alternativa": "B"
+        },
+        {
+          "textoResposta": "Atrapalhar o leitor do código",
+          "respostaCorreta": false,
+          "alternativa": "C"
+        },
+        {
+          "textoResposta": "Deixar com mais linhas o programa",
+          "respostaCorreta": false,
+          "alternativa": "D"
+        }
+      ],
+      "dificuldadePergunta": "medio",
+      "jaFoiFeita": false
+    },
+    {
+      "id": 20,
+      "enunciado": "Qual dessas codificações aceitam caracteres?",
+      "respostas": [
+        {
+          "textoResposta": "ISO-2022-CJK",
+          "respostaCorreta": false,
+          "alternativa": "A"
+        },
+        {
+          "textoResposta": "GB 18030",
+          "respostaCorreta": false,
+          "alternativa": "B"
+        },
+        {
+          "textoResposta": "UTF-8",
+          "respostaCorreta": true,
+          "alternativa": "C"
+        },
+        {
+          "textoResposta": "ISO-8859-6",
+          "respostaCorreta": false,
+          "alternativa": "D"
+        }
+      ],
+      "dificuldadePergunta": "medio",
+      "jaFoiFeita": false
+    },
+    {
+      "id": 1,
+      "enunciado": "O que é uma variável?",
+      "respostas": [
+        {
+          "textoResposta": "Estrutura que guarda valores na memória",
+          "respostaCorreta": true,
+          "alternativa": "A"
+        },
+        {
+          "textoResposta": "Varias aves",
+          "respostaCorreta": false,
+          "alternativa": "B"
+        },
+        {
+          "textoResposta": "Estrutura indexada não dinâmica",
+          "respostaCorreta": false,
+          "alternativa": "C"
+        },
+        {
+          "textoResposta": "Um banco de dados",
+          "respostaCorreta": false,
+          "alternativa": "D"
+        }
+      ],
+      "dificuldadePergunta": "facil",
+      "jaFoiFeita": false
     }
   ],
   "inimigos": [
     {
-      "id": 0,
+      "id": 1,
       "vida": 130,
       "vidaBase": 130,
       "nome": "BubbleSurto",
@@ -348,7 +600,7 @@
       "jaLutou": false
     },
     {
-      "id": 1,
+      "id": 2,
       "vida": 110,
       "vidaBase": 110,
       "nome": "MestreDosMagos",
@@ -357,7 +609,7 @@
       "jaLutou": false
     },
     {
-      "id": 2,
+      "id": 3,
       "vida": 50,
       "vidaBase": 50,
       "nome": "Garticoz",
@@ -366,7 +618,7 @@
       "jaLutou": false
     },
     {
-      "id": 2,
+      "id": 4,
       "vida": 70,
       "vidaBase": 70,
       "nome": "Ron",
@@ -375,7 +627,7 @@
       "jaLutou": false
     },
     {
-      "id": 2,
+      "id": 5,
       "vida": 98,
       "vidaBase": 98,
       "nome": "Grorncu",
@@ -384,7 +636,7 @@
       "jaLutou": false
     },
     {
-      "id": 2,
+      "id": 6,
       "vida": 80,
       "vidaBase": 80,
       "nome": "Rudver",
